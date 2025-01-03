@@ -6,8 +6,6 @@ I have experience in the development of Artificial Intelligence and Machine Lear
 - 🐍 **Python**
 - 💻 **C#**
 - ☕ **Java**
-- 🌐 **HTML** | **CSS**
-- ⚡ **JavaScript**
 - 🗃️ **SQL**
 
 ## 🛠️ Technologies and Tools:
