@@ -11,9 +11,9 @@ Passionate about solving real-world problems using **Artificial Intelligence**, 
 ## 💻 **Tech Stack**
 
 ### 🔧 **Languages**
-- 🐍 **Python** – Main language for AI/ML
-- ☕ **Java** – Object-Oriented Programming
-- 🗃️ **SQL** – Queries, Views, Joins
+- 🐍 **Python** - Main language for AI/ML
+- ☕ **Java** - Object-Oriented Programming
+- 🗃️ **SQL** - Queries, Views, Joins
 
 ### 🛠️ **Tools & Libraries**
 - 📊 **Scikit-Learn**, **Pandas**, **NumPy**
