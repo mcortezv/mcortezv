@@ -8,6 +8,7 @@ Passionate about solving real-world problems using **Artificial Intelligence**, 
 - Principal Component Analysis (PCA), Dimensionality Reduction
 - Model Evaluation: MSE, R², F1-Score, Confusion Matrix
 
+
 ## 💻 **Tech Stack**
 
 ### 🔧 **Languages**
