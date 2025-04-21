@@ -1,18 +1,29 @@
 # 👨‍💻 Manuel de Jesus Cortez Villa
 
-I have experience in the development of Artificial Intelligence and Machine Learning Models using Python and Scikit-Learn. My focus includes Data Preprocessing, the implementation of prediction and classification algorithms such as Linear Regression, Classification Forests, and Principal Component Analysis (PCA). Additionally, I work with techniques for Data Scaling, Balancing, and Stratification. I validate models using metrics such as Mean Squared Error (MSE), R², Confusion Matrix, Classification Report, and F1 Score.
+Passionate about solving real-world problems using **Artificial Intelligence**, **Machine Learning**, and **Data Engineering**. Specialized in **Predictive Modeling**, **Data Preprocessing**, and **Model Evaluation** using Python tools.
 
-## 🔧 Programming Languages:
-- 🐍 **Python**
-- 💻 **C#**
-- ☕ **Java**
-- 🗃️ **SQL**
+---
 
-## 🛠️ Technologies and Tools:
-- 🤖 **Scikit-Learn**
-- 🔥 **TensorFlow**
-- 🧠 **PyTorch**
-- 🗄️ **MySQL**
+### **Machine Learning & AI**
 
-## 📫 Connect with Me:
+- Linear Regression, Decision Trees, Random Forests
+- Principal Component Analysis (PCA), Dimensionality Reduction
+- Model Evaluation: MSE, R², F1-Score, Confusion Matrix
+
+---
+
+## 💻 **Tech Stack**
+
+### 🔧 **Languages**
+- 🐍 **Python** – Main language for AI/ML
+- ☕ **Java** – Object-Oriented Programming
+- 🗃️ **SQL** – Queries, Views, Joins
+
+### 🛠️ **Tools & Libraries**
+- 📊 **Scikit-Learn**, **Pandas**, **NumPy**
+- 🧪 **Jupyter Notebooks**, **Google Colab**
+- 🔬 **VS Code**, **IntelliJ IDEA**, **PyCharm**
+- 🐬 **MySQL**
+
+## 📫 **Connect with Me:**
 - [Gmail](mailto:mdjesuscv@gmail.com)
