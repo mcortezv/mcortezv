@@ -15,11 +15,6 @@ Passionate about solving real-world problems using **Artificial Intelligence**, 
 - ☕ **Java** - Object-Oriented Programming
 - 🗃️ **SQL** - Queries, Views, Joins
 
-### 🛠️ **Tools & Libraries**
-- 📊 **Scikit-Learn**, **Pandas**, **NumPy**
-- 🧪 **Jupyter Notebooks**, **Google Colab**
-- 🔬 **VS Code**, **IntelliJ IDEA**, **PyCharm**
-- 🐬 **MySQL**
-
 ## 📫 **Connect with Me:**
 - [Gmail](mailto:mdjesuscv@gmail.com)
+
