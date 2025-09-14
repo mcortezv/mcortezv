@@ -1,6 +1,8 @@
 # 👨‍💻 Manuel de Jesus Cortez Villa
 
-Passionate about solving real-world problems using **Artificial Intelligence**, **Machine Learning**, and **Data Engineering**. Specialized in **Predictive Modeling**, **Data Preprocessing**, and **Model Evaluation** using Python tools.
+I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering** to design models that predict outcomes, process data efficiently, and evaluate results using Python tools.
+
+## 💻 **Technical Skills**
 
 ### **Machine Learning & AI**
 
@@ -8,13 +10,10 @@ Passionate about solving real-world problems using **Artificial Intelligence**, 
 - Principal Component Analysis (PCA), Dimensionality Reduction
 - Model Evaluation: MSE, R², F1-Score, Confusion Matrix
 
-## 💻 **Tech Stack**
-
 ### 🔧 **Languages**
-- 🐍 **Python** - Main language for AI/ML
-- ☕ **Java** - Object-Oriented Programming
-- 🗃️ **SQL** - Queries, Views, Joins
+- 🐍 **Python** - Data Analysis & ML.
+- ☕ **Java** - Data structures and algorithms.
+- 🗃️ **SQL** - Database modeling and querying.
 
 ## 📫 **Connect with Me:**
 - [Gmail](mailto:mdjesuscv@gmail.com)
-
