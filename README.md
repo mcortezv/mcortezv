@@ -10,10 +10,11 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 - Principal Component Analysis (PCA), Dimensionality Reduction
 - Model Evaluation: MSE, R², F1-Score, Confusion Matrix
 
-### 🔧 **Languages**
+### **Languages**
 - 🐍 **Python** - Data Analysis & ML.
 - ☕ **Java** - Data structures and algorithms.
 - 🗃️ **SQL** - Database modeling and querying.
 
 ## 📫 **Connect with Me:**
 - [Gmail](mailto:mdjesuscv@gmail.com)
+
