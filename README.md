@@ -4,12 +4,7 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 
 ## 💻 **Technical Skills**
 
-### **Machine Learning & AI** <div align="right">
-  <img src="intel.png" alt="Skills" width="350" 
-  style="border: 4px solid #a371f7; 
-         border-radius: 12px; 
-         padding: 6px;">
-</div>
+### **Machine Learning & AI** <div align="right"><img src="intel.png" alt="Skills" width="350" style="border: 4px solid #a371f7; border-radius: 12px; padding: 6px;"</div>
 
 - Linear Regression, Decision Trees, Random Forests
 - Principal Component Analysis (PCA), Dimensionality Reduction
@@ -22,4 +17,5 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 
 ## 📫 **Connect with Me:**
 - [Gmail](mailto:mdjesuscv@gmail.com)
+
 
