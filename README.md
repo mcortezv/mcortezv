@@ -5,13 +5,10 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 ## 💻 **Technical Skills**
 
 ### **Machine Learning & AI** <div align="right">
-<img src="intel.png" alt="Skills" width="350" 
-  style="border: 4px solid #0969DA; 
-         border-radius: 16px; 
-         padding: 8px; 
-         box-shadow: 0px 0px 20px rgba(9, 105, 218, 0.6),
-                     0px 0px 8px rgba(0, 0, 0, 0.4) inset; 
-         background: linear-gradient(135deg, #0d1117, #161b22);">
+  <img src="intel.png" alt="Skills" width="350" 
+  style="border: 4px solid #a371f7; 
+         border-radius: 12px; 
+         padding: 6px;">
 </div>
 
 - Linear Regression, Decision Trees, Random Forests
@@ -25,3 +22,4 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 
 ## 📫 **Connect with Me:**
 - [Gmail](mailto:mdjesuscv@gmail.com)
+
