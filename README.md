@@ -2,7 +2,7 @@
 
 I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering** to design models that predict outcomes, process data efficiently, and evaluate results using Python tools.
 
----
+#
 
 ### **Machine Learning & AI** <img src="intel.png" alt="Skills" width="350" align="right" />
 
