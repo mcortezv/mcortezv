@@ -4,7 +4,7 @@ I use Artificial Intelligence, Machine Learning, and Data Engineering to design 
 
 ## 💻 Technical Skills
 
-### Machine Learning & AI img src=intel.png alt=Skills width=350 align=right 
+### **Machine Learning & AI** <img src="intel.png" alt="Skills" width="350" align="right" />
 
 - Linear Regression, Decision Trees, Random Forests
 - Principal Component Analysis (PCA), Dimensionality Reduction
@@ -17,3 +17,4 @@ I use Artificial Intelligence, Machine Learning, and Data Engineering to design 
 
 ## 📫 Connect with Me
 - [Gmail](mailtomdjesuscv@gmail.com)
+
