@@ -2,7 +2,7 @@
 
 I use Artificial Intelligence, Machine Learning, and Data Engineering to design models that predict outcomes, process data efficiently, and evaluate results using Python tools.
 
-## 💻 Technical Skills
+#
 
 ### **Machine Learning & AI** <img src="intel.png" alt="Skills" width="350" align="right" />
 
@@ -14,7 +14,3 @@ I use Artificial Intelligence, Machine Learning, and Data Engineering to design 
 - 🐍 Python - Data Analysis & ML
 - ☕ Java - Data structures and algorithms
 - 🗃️ SQL - Database modeling and querying
-
-## 📫 Connect with Me
-- [Gmail](mailtomdjesuscv@gmail.com)
-
