@@ -1,4 +1,4 @@
-# Manuel de Jesus Cortez Villa
+# 👨‍💻 Manuel de Jesus Cortez Villa
 
 I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering** to design models that predict outcomes, process data efficiently, and evaluate results using **Python** tools.
 
