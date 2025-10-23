@@ -1,3 +1,5 @@
+# 👨‍💻 Manuel de Jesus Cortez Villa
+
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3670A0?logo=python&logoColor=ffdd54" />
   <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" />
@@ -9,8 +11,6 @@
   <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-121011?logo=github&logoColor=white" />
 </p>
-
-# 👨‍💻 Manuel de Jesus Cortez Villa
 
 I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering** to design models that predict outcomes, process data efficiently, and evaluate results using **Python** tools.
 
