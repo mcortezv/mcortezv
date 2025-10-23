@@ -16,7 +16,6 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 
 ---
 
-### **Machine Learning & AI** <img src="intel.png" alt="intel" width="355" />
 ### **Machine Learning & AI** <div style="float: right; margin-right: 10px;"><img src="intel.png" alt="Skills" width="350" align="right" /></div>
 
 
@@ -28,3 +27,4 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 - 🐍 Python - Data Analysis & ML
 - ☕ Java - Data structures and algorithms
 - 🗃️ SQL - Database modeling and querying
+
