@@ -1,4 +1,4 @@
-<p align="left">
+**<p align="left">
   <img src="https://img.shields.io/badge/Python-3670A0?logo=python&logoColor=ffdd54" />
   <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" />
   <img src="https://img.shields.io/badge/Numpy-013243?logo=numpy&logoColor=white" />
@@ -6,9 +6,9 @@
   <img src="https://img.shields.io/badge/JetBrains-000000?logo=jetbrains&logoColor=white" />
   <img src="https://img.shields.io/badge/VS%20Code%20Insiders-0078D7?logo=visual-studio-code&logoColor=white" />
   <img src="https://img.shields.io/badge/DataGrip-000000?logo=datagrip&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-121011?logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" />
-</p>
+  <img src="https://img.shields.io/badge/GitHub-121011?logo=github&logoColor=white" />
+</p>**
 
 # 👨‍💻 Manuel de Jesus Cortez Villa
 
@@ -26,4 +26,3 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 - 🐍 Python - Data Analysis & ML
 - ☕ Java - Data structures and algorithms
 - 🗃️ SQL - Database modeling and querying
-
