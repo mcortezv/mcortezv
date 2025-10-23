@@ -1,13 +1,13 @@
 <p align="left">
-  <img src="https://img.shields.io/badge/Python-1f1f1f?logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-1f1f1f?logo=scikitlearn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Numpy-1f1f1f?logo=numpy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-1f1f1f?logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/JetBrains-1f1f1f?logo=jetbrains&logoColor=white" />
-  <img src="https://img.shields.io/badge/VS%20Code%20Insiders-1f1f1f?logo=visual-studio-code&logoColor=white" />
-  <img src="https://img.shields.io/badge/DataGrip-1f1f1f?logo=datagrip&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-1f1f1f?logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-1f1f1f?logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-2a3b50?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/scikit--learn-2a3b50?logo=scikitlearn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Numpy-2a3b50?logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-2a3b50?logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/JetBrains-2a3b50?logo=jetbrains&logoColor=white" />
+  <img src="https://img.shields.io/badge/VS%20Code%20Insiders-2a3b50?logo=visual-studio-code&logoColor=white" />
+  <img src="https://img.shields.io/badge/DataGrip-2a3b50?logo=datagrip&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-2a3b50?logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-2a3b50?logo=github&logoColor=white" />
 </p>
 
 # 👨‍💻 Manuel de Jesus Cortez Villa
