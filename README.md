@@ -17,6 +17,8 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 ---
 
 ### **Machine Learning & AI** <img src="intel.png" alt="intel" width="355" />
+### **Machine Learning & AI** <div style="float: right; margin-right: 10px;"><img src="intel.png" alt="Skills" width="350" align="right" /></div>
+
 
 - Linear Regression, Decision Trees, Random Forests
 - Principal Component Analysis (PCA), Dimensionality Reduction
