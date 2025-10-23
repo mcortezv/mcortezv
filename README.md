@@ -16,7 +16,7 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 
 ---
 
-### **Machine Learning & AI** <img src="intel.png" alt="Skills" width="330" align="right" />
+### **Machine Learning & AI** <img src="intel.png" alt="Skills" width="360" align="right" />
 
 - Linear Regression, Decision Trees, Random Forests
 - Principal Component Analysis (PCA), Dimensionality Reduction
