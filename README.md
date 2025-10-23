@@ -16,7 +16,7 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 
 ---
 
-### **Machine Learning & AI** <div style="float: right; margin-right: 10px;"><img src="intel.png" alt="Skills" width="350" align="right" /></div>
+### **Machine Learning & AI** <img src="intel.png" alt="Skills" width="355" align="right" />
 
 
 - Linear Regression, Decision Trees, Random Forests
@@ -27,4 +27,3 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 - 🐍 Python - Data Analysis & ML
 - ☕ Java - Data structures and algorithms
 - 🗃️ SQL - Database modeling and querying
-
