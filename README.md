@@ -1,4 +1,4 @@
-**<p align="left">
+<p align="left">
   <img src="https://img.shields.io/badge/Python-3670A0?logo=python&logoColor=ffdd54" />
   <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" />
   <img src="https://img.shields.io/badge/Numpy-013243?logo=numpy&logoColor=white" />
@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/DataGrip-000000?logo=datagrip&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub-121011?logo=github&logoColor=white" />
-</p>**
+</p>
 
 # 👨‍💻 Manuel de Jesus Cortez Villa
 
