@@ -1,18 +1,19 @@
 # 👨‍💻 Manuel de Jesus Cortez Villa
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Python-3670A0?logo=python&logoColor=ffdd54" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Numpy-013243?logo=numpy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/JetBrains-000000?logo=jetbrains&logoColor=white" />
-  <img src="https://img.shields.io/badge/VS%20Code%20Insiders-0078D7?logo=visual-studio-code&logoColor=white" />
-  <img src="https://img.shields.io/badge/DataGrip-000000?logo=datagrip&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-121011?logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-7C3AED?logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-7C3AED?logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/Mastra-7C3AED?logo=ai&logoColor=white" />
+  <img src="https://img.shields.io/badge/Supabase-7C3AED?logo=supabase&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-7C3AED?logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-7C3AED?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/scikit--learn-7C3AED?logo=scikitlearn&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-7C3AED?logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-7C3AED?logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-7C3AED?logo=github&logoColor=white" />
 </p>
 
-I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering** to design models that predict outcomes, process data efficiently, and evaluate results using **Python** tools.
+I work on the design and implementation of production-ready **AI Systems**, focusing on **AI Agents**, automated **Workflows**, and model **Evaluations** that deliver measurable impact on **User Experience**, **Operational Efficiency**, and **B2B** sales.
 
 ---
 
@@ -25,6 +26,6 @@ I use **Artificial Intelligence**, **Machine Learning**, and **Data Engineering*
 
 ### **Languages**
 - 🐍 Python - Data Analysis & ML
+- 🟦 TypeScript – Web Development
 - ☕ Java - Data structures and algorithms
 - 🗃️ SQL - Database modeling and querying
-
