@@ -27,6 +27,7 @@ I work on the design and implementation of production-ready **AI Systems**, focu
 
 ### **Languages**
 - 🐍 Python - Data Analysis & ML
-- 🟦 TypeScript – Web Development
+- 🟦 TypeScript - Web Development
 - ☕ Java - Data structures and algorithms
 - 🗃️ SQL - Database modeling and querying
+
