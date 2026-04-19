@@ -1,624 +1,1000 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=1280"/>
-<title>Experience & Stack · Manuel Cortez</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --bg-base:         #0d1117;
-    --bg-surface:      #010409;
-    --bg-card:         #161b22;
-    --bg-card-hover:   #1c2128;
-    --bg-card-2:       #21262d;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280" />
+  <title>Experience & Stack · Manuel Cortez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg-base: #0d1117;
+      --bg-surface: #010409;
+      --bg-card: #1e242d;
+      --bg-card-hover: #242b36;
+      --bg-card-2: #262d38;
 
-    --border:          #30363d;
-    --border-medium:   #21262d;
-    --border-strong:   #484f58;
+      --border: #3d4550;
+      --border-medium: #2d343f;
+      --border-strong: #5a6270;
 
-    --text:            #e6edf3;
-    --text-secondary:  #7d8590;
-    --text-muted:      #6e7681;
-    --text-disabled:   #484f58;
+      --text: #f0f6fc;
+      --text-secondary: #b0bac5;
+      --text-muted: #8b949e;
+      --text-disabled: #6e7681;
 
-    --accent:          #22d3a5;
-    --accent-dim:      rgba(34,211,165,0.10);
-    --accent-glow:     rgba(34,211,165,0.22);
+      --accent: #22d3a5;
+      --accent-dim: rgba(34, 211, 165, 0.12);
+      --accent-glow: rgba(34, 211, 165, 0.28);
 
-    --accent-2:        #8b5cf6;
-    --accent-2-dim:    rgba(139,92,246,0.10);
-    --accent-3:        #f97316;
-    --accent-4:        #3b82f6;
+      --accent-2: #8b5cf6;
+      --accent-2-dim: rgba(139, 92, 246, 0.20);
+      --accent-3: #f97316;
+      --accent-4: #3b82f6;
 
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-  }
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
 
-  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-  body {
-    background: var(--bg-base);
-    color: var(--text);
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    padding: 4rem 2.5rem;
-  }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .max-w { max-width: 1100px; margin: 0 auto; position: relative; z-index: 10; }
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  /* ─── Neural bg ─── */
-  #neural {
-    position: fixed; inset: 0; z-index: 0;
-    pointer-events: none;
-  }
+    body {
+      background: var(--bg-base);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      padding: 4rem 2.5rem;
+    }
 
-  /* ─── Section label ─── */
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.25rem;
-  }
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 1px;
-    background: var(--accent);
-  }
+    .max-w {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
+    }
 
-  /* ─── Typography ─── */
-  .text-h1 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--text);
-  }
-  .text-gradient-accent {
-    background: linear-gradient(135deg, var(--accent), #3ecf8e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .text-body {
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
-  }
+    /* ─── Neural bg ─── */
+    #neural {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-  .mb-10 { margin-bottom: 2.5rem; }
-  .mb-14 { margin-bottom: 3.5rem; }
-  .mt-4 { margin-top: 1rem; }
+    /* ─── Section label ─── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
 
-  /* ─── EXPERIENCE ─── */
-  .section { margin-bottom: 6rem; }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--accent);
+    }
 
-  .exp-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border-medium);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-  }
+    /* ─── Typography ─── */
+    .text-h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
 
-  .exp-card {
-    position: relative;
-    background: var(--bg-card);
-    padding: 1.625rem;
-    overflow: hidden;
-  }
+    .text-gradient-accent {
+      background: linear-gradient(135deg, var(--accent), #3ecf8e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-  .exp-current { grid-column: span 2; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; }
-  .exp-edu { display: flex; flex-direction: column; }
+    .text-body {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
 
-  .tag-mono {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    display: block;
-  }
+    .mb-10 {
+      margin-bottom: 2.5rem;
+    }
 
-  .card-title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.2;
-  }
-  .card-title .at { color: var(--accent); }
+    .mb-14 {
+      margin-bottom: 3.5rem;
+    }
 
-  .card-sub {
-    font-size: 1.0625rem;
-    color: var(--text-muted);
-    margin-top: 0.875rem;
-    line-height: 1.65;
-    max-width: 38rem;
-  }
+    .mt-4 {
+      margin-top: 1rem;
+    }
 
-  .pulse-row {
-    display: flex; align-items: center; flex-wrap: wrap;
-    gap: 0.625rem; margin-top: 1.5rem;
-  }
-  .pulse-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--accent); position: relative;
-    flex-shrink: 0;
-  }
-  .pulse-dot::after {
-    content: ''; position: absolute; inset: -3px;
-    border-radius: 50%; background: var(--accent);
-    opacity: 0.4; animation: ping 2s cubic-bezier(0,0,0.2,1) infinite;
-  }
-  @keyframes ping { 75%,100% { transform: scale(2); opacity: 0; } }
-  .pulse-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    letter-spacing: 0.04em;
-  }
+    /* ─── EXPERIENCE ─── */
+    .section {
+      margin-bottom: 6rem;
+    }
 
-  /* ─── Education card ─── */
-  .edu-title { font-size: 1.5rem; font-weight: 700; color: var(--text); }
-  .edu-deg { font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.375rem; line-height: 1.4; }
-  .subjects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.4rem;
-    margin-top: 1.125rem;
-    margin-bottom: 1.75rem;
-  }
-  .subj {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.58rem; color: var(--text-secondary);
-    padding: 0.22rem 0.4rem;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    background: var(--accent-2-dim);
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 0.01em;
-    line-height: 1.3;
-  }
-  .progress-wrap { margin-top: 2rem; }
-  .progress-bar {
-    width: 100%; height: 4px;
-    background: var(--border);
-    border-radius: 999px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%; border-radius: 999px; position: relative;
-    background: linear-gradient(90deg, var(--accent-2), rgba(139,92,246,0.4));
-    width: 33%;
-  }
-  .progress-fill::after {
-    content: ''; position: absolute; right: 0; top: 50%;
-    transform: translateY(-50%);
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent-2);
-    box-shadow: 0 0 12px var(--accent-2);
-  }
-  .progress-legend {
-    display: flex; justify-content: space-between;
-    margin-top: 0.625rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem; color: var(--text-muted);
-    letter-spacing: 0.04em;
-  }
-  .edu-status {
-    display: flex; align-items: center; gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem; color: var(--text-secondary);
-    letter-spacing: 0.06em;
-  }
-  .edu-status .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent-2);
-    box-shadow: 0 0 10px rgba(139,92,246,0.5);
-  }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-medium);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
 
-  /* ─── Achievement cards (NVIDIA, Intel) ─── */
-  .ach-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .ach-card {
-    position: relative;
-    border-radius: var(--radius-xl);
-    padding: 1.25rem;
-    overflow: hidden;
-  }
-  .ach-nvidia {
-    background: linear-gradient(135deg, rgba(118,185,0,0.08), rgba(118,185,0,0.02), var(--bg-card));
-    border: 1px solid rgba(118,185,0,0.15);
-  }
-  .ach-intel {
-    background: linear-gradient(135deg, rgba(0,113,197,0.08), rgba(0,113,197,0.02), var(--bg-card));
-    border: 1px solid rgba(0,113,197,0.15);
-  }
-  .ach-row { display: flex; gap: 1rem; position: relative; z-index: 10; align-items: flex-start; }
-  .ach-logo {
-    width: 60px; height: 60px; border-radius: 12px;
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .ach-logo img { width: 36px; height: 36px; object-fit: contain; }
-  .ach-nvidia .ach-logo {
-    background: linear-gradient(135deg, rgba(118,185,0,0.18), rgba(118,185,0,0.06));
-    border: 1px solid rgba(118,185,0,0.3);
-  }
-  .ach-intel .ach-logo {
-    background: linear-gradient(135deg, rgba(0,113,197,0.18), rgba(0,113,197,0.06));
-    border: 1px solid rgba(0,113,197,0.3);
-  }
-  .ach-text { flex: 1; min-width: 0; }
-  .ach-title { font-size: 1.25rem; font-weight: 700; color: var(--text); line-height: 1.25; margin-bottom: 0.375rem; }
-  .ach-issuer { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.625rem; }
-  .ach-nvidia .ach-issuer { color: #76b900; }
-  .ach-intel .ach-issuer { color: #0071c5; }
-  .ach-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
-  .ach-date { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-disabled); margin-top: 0.875rem; }
+    .exp-card {
+      position: relative;
+      background: var(--bg-card);
+      padding: 1.625rem;
+      overflow: hidden;
+    }
 
-  /* ─── STACK bento ─── */
-  .stack-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    gap: 1.5rem; margin-bottom: 2.5rem;
-  }
-  .stack-header .text-h1 { max-width: 28rem; }
-  .stack-header .text-body { max-width: 24rem; text-align: right; color: var(--text-muted); }
+    .exp-current {
+      grid-column: span 2;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-  .stack-bento {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border-medium);
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-  }
-  .stack-cell {
-    background: var(--bg-card);
-    padding: 1.75rem;
-    display: flex; flex-direction: column;
-  }
-  .cell-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
+    .exp-edu {
+      display: flex;
+      flex-direction: column;
+    }
 
-  /* AI/ML cell */
-  .cell-aiml { grid-column: span 2; min-height: 220px; }
-  .ai-pipeline {
-    display: flex; align-items: center; flex-wrap: wrap; gap: 0.375rem;
-    margin: 0.25rem 0 1.25rem;
-  }
-  .ai-chip {
-    display: inline-flex; align-items: center; gap: 0.375rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem; font-weight: 600;
-    padding: 0.125rem 0.5rem;
-    border-radius: 4px;
-    background: rgba(34,211,165,0.12);
-    color: #22d3a5;
-    border: 1px solid rgba(34,211,165,0.2);
-  }
-  .ai-chip img { width: 14px; height: 14px; object-fit: contain; }
-  .ai-arrow { color: var(--text-disabled); font-size: 0.6rem; }
+    .tag-mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: block;
+    }
 
-  .tech-row {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 1rem;
-    padding: 0.35rem 0;
-  }
-  .tech-info { display: flex; align-items: center; gap: 0.625rem; min-width: 0; }
-  .tech-info img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
-  .tech-name { font-size: 0.75rem; font-weight: 600; color: var(--text); }
-  .tech-sep { color: var(--text-disabled); margin: 0 0.375rem; font-size: 0.75rem; }
-  .tech-desc { font-size: 0.68rem; color: var(--text-muted); }
+    .card-title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
 
-  .level-bar {
-    width: 32px; height: 4px;
-    border-radius: 999px;
-    overflow: hidden;
-    flex-shrink: 0;
-    background: var(--border-medium);
-  }
-  .level-fill { height: 100%; border-radius: 999px; opacity: 0.7; }
+    .card-title .at {
+      color: var(--accent);
+    }
 
-  .space-y-2 > * + * { margin-top: 0.625rem; }
-  .space-y-3 > * + * { margin-top: 0.75rem; }
-  .space-y-4 > * + * { margin-top: 1rem; }
+    .card-sub {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      margin-top: 0.875rem;
+      line-height: 1.65;
+      max-width: 38rem;
+    }
 
-  .mt-auto { margin-top: auto; }
+    .pulse-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      margin-top: 1.5rem;
+    }
 
-  /* Languages cell */
-  .lang-item { }
-  .lang-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; }
-  .lang-left { display: flex; align-items: center; gap: 0.5rem; }
-  .lang-left img { width: 20px; height: 20px; }
-  .lang-name { font-size: 0.875rem; font-weight: 700; color: var(--text); }
-  .lang-desc { font-size: 0.68rem; color: var(--text-muted); padding-left: 1.75rem; line-height: 1.4; }
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      position: relative;
+      flex-shrink: 0;
+    }
 
-  /* Framework cell */
-  .fw-name {
-    font-size: 1.5rem; font-weight: 700;
-    color: var(--accent-2);
-  }
-  .fw-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
-  .fw-left { display: flex; align-items: center; gap: 0.625rem; }
-  .fw-left img { width: 20px; height: 20px; }
-  .fw-desc { font-size: 0.68rem; color: var(--text-muted); }
-  .fw-progress {
-    margin-top: 1rem; height: 4px; border-radius: 999px; overflow: hidden;
-    background: rgba(139,92,246,0.12);
-  }
-  .fw-progress-fill { height: 100%; width: 95%; border-radius: 999px; background: rgba(139,92,246,0.6); }
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.4;
+      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
 
-  /* Database cell */
-  .cell-db { grid-column: span 2; min-height: 180px; }
-  .db-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
-    margin-top: auto;
-  }
-  .db-tile {
-    padding: 0.75rem; border-radius: 8px;
-    background: rgba(59,130,246,0.06);
-    border: 1px solid rgba(59,130,246,0.14);
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .db-tile-top { display: flex; align-items: center; gap: 0.5rem; }
-  .db-tile-top img { width: 20px; height: 20px; }
-  .db-tile-name { font-size: 0.875rem; font-weight: 700; color: var(--text); line-height: 1.1; }
-  .db-tile-desc { font-size: 0.63rem; color: var(--text-muted); line-height: 1.35; }
+    @keyframes ping {
 
-  /* ─── Fixed grid + neon glow effects (ported from hover-only in portfolio) ─── */
-  .fx-grid, .fx-glow { position: relative; }
-  .fx-grid::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-  .fx-glow::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .fx-glow-purple::after { width: 140px; height: 140px; background: radial-gradient(circle at top right, rgba(139,92,246,0.18) 0%, transparent 70%); }
-  .fx-glow-nvidia::after { width: 180px; height: 180px; background: radial-gradient(circle at top right, rgba(118,185,0,0.22) 0%, transparent 70%); }
-  .fx-glow-intel::after  { width: 180px; height: 180px; background: radial-gradient(circle at top right, rgba(0,113,197,0.22) 0%, transparent 70%); }
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
 
-  /* Elevate direct children above pseudo effects */
-  .fx-grid > *, .fx-glow > * { position: relative; z-index: 1; }
+    .pulse-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
 
-  /* ─── Integrated stack chips ─── */
-  .stack-chips {
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-  }
-  .stack-chip {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    padding: 0.625rem 1rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-medium);
-    border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--text);
-    transition: border-color 200ms, background 200ms;
-  }
-  .stack-chip:hover {
-    border-color: var(--accent);
-    background: var(--bg-card-hover);
-  }
-  .stack-chip img {
-    width: 20px; height: 20px; object-fit: contain; flex-shrink: 0;
-  }
-</style>
+    /* ─── Education card ─── */
+    .edu-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .edu-deg {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-top: 0.375rem;
+      line-height: 1.4;
+    }
+
+    .subjects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      margin-top: 1.125rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .subj {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--text-secondary);
+      padding: 0.22rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--accent-2-dim);
+      text-align: center;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+
+    .progress-wrap {
+      margin-top: 2rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      position: relative;
+      background: linear-gradient(90deg, var(--accent-2), rgba(139, 92, 246, 0.4));
+      width: 33%;
+    }
+
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 12px var(--accent-2);
+    }
+
+    .progress-legend {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.625rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .edu-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.06em;
+    }
+
+    .edu-status .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    }
+
+    /* ─── Achievement cards (NVIDIA, Intel) ─── */
+    .ach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .ach-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 1.25rem;
+      overflow: hidden;
+    }
+
+    .ach-nvidia {
+      background: linear-gradient(135deg, rgba(118, 185, 0, 0.18), rgba(118, 185, 0, 0.06), var(--bg-card));
+      border: 1px solid rgba(118, 185, 0, 0.35);
+    }
+
+    .ach-intel {
+      background: linear-gradient(135deg, rgba(0, 113, 197, 0.18), rgba(0, 113, 197, 0.06), var(--bg-card));
+      border: 1px solid rgba(0, 113, 197, 0.35);
+    }
+
+    .ach-row {
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      z-index: 10;
+      align-items: flex-start;
+    }
+
+    .ach-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ach-logo img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .ach-nvidia .ach-logo {
+      background: linear-gradient(135deg, rgba(118, 185, 0, 0.18), rgba(118, 185, 0, 0.06));
+      border: 1px solid rgba(118, 185, 0, 0.3);
+    }
+
+    .ach-intel .ach-logo {
+      background: linear-gradient(135deg, rgba(0, 113, 197, 0.18), rgba(0, 113, 197, 0.06));
+      border: 1px solid rgba(0, 113, 197, 0.3);
+    }
+
+    .ach-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ach-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 0.375rem;
+    }
+
+    .ach-issuer {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.625rem;
+    }
+
+    .ach-nvidia .ach-issuer {
+      color: #90d400;
+    }
+
+    .ach-intel .ach-issuer {
+      color: #2196f3;
+    }
+
+    .ach-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .ach-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-disabled);
+      margin-top: 0.875rem;
+    }
+
+    /* ─── STACK bento ─── */
+    .stack-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stack-header .text-h1 {
+      max-width: 28rem;
+    }
+
+    .stack-header .text-body {
+      max-width: 24rem;
+      text-align: right;
+      color: var(--text-muted);
+    }
+
+    .stack-bento {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-medium);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .stack-cell {
+      background: var(--bg-card);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cell-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    /* AI/ML cell */
+    .cell-aiml {
+      grid-column: span 2;
+      min-height: 220px;
+    }
+
+    .ai-pipeline {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin: 0.25rem 0 1.25rem;
+    }
+
+    .ai-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(34, 211, 165, 0.12);
+      color: #22d3a5;
+      border: 1px solid rgba(34, 211, 165, 0.2);
+    }
+
+    .ai-chip img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+    }
+
+    .ai-arrow {
+      color: var(--text-disabled);
+      font-size: 0.6rem;
+    }
+
+    .tech-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.35rem 0;
+    }
+
+    .tech-info {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      min-width: 0;
+    }
+
+    .tech-info img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .tech-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .tech-sep {
+      color: var(--text-disabled);
+      margin: 0 0.375rem;
+      font-size: 0.75rem;
+    }
+
+    .tech-desc {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .level-bar {
+      width: 32px;
+      height: 4px;
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--border-medium);
+    }
+
+    .level-fill {
+      height: 100%;
+      border-radius: 999px;
+      opacity: 0.7;
+    }
+
+    .space-y-2>*+* {
+      margin-top: 0.625rem;
+    }
+
+    .space-y-3>*+* {
+      margin-top: 0.75rem;
+    }
+
+    .space-y-4>*+* {
+      margin-top: 1rem;
+    }
+
+    .mt-auto {
+      margin-top: auto;
+    }
+
+    /* Languages cell */
+    .lang-item {}
+
+    .lang-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .lang-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-left img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .lang-name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .lang-desc {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      padding-left: 1.75rem;
+      line-height: 1.4;
+    }
+
+    /* Framework cell */
+    .fw-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-2);
+    }
+
+    .fw-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .fw-left {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .fw-left img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .fw-desc {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .fw-progress {
+      margin-top: 1rem;
+      height: 4px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(139, 92, 246, 0.12);
+    }
+
+    .fw-progress-fill {
+      height: 100%;
+      width: 95%;
+      border-radius: 999px;
+      background: rgba(139, 92, 246, 0.6);
+    }
+
+    /* Database cell */
+    .cell-db {
+      grid-column: span 2;
+      min-height: 180px;
+    }
+
+    .db-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    .db-tile {
+      padding: 0.75rem;
+      border-radius: 8px;
+      background: rgba(59, 130, 246, 0.06);
+      border: 1px solid rgba(59, 130, 246, 0.14);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .db-tile-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .db-tile-top img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .db-tile-name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .db-tile-desc {
+      font-size: 0.63rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* ─── Fixed grid + neon glow effects (ported from hover-only in portfolio) ─── */
+    .fx-grid,
+    .fx-glow {
+      position: relative;
+    }
+
+    .fx-grid::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .fx-glow::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .fx-glow-purple::after {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.35) 0%, transparent 70%);
+    }
+
+    .fx-glow-nvidia::after {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at top right, rgba(118, 185, 0, 0.40) 0%, transparent 70%);
+    }
+
+    .fx-glow-intel::after {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at top right, rgba(0, 113, 197, 0.40) 0%, transparent 70%);
+    }
+
+    /* Elevate direct children above pseudo effects */
+    .fx-grid>*,
+    .fx-glow>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── Stack section ─── */
+    .stack-section {
+      margin-top: 2rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .stack-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .stack-chip-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .chip img, .chip svg {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+  </style>
 </head>
+
 <body>
 
-<canvas id="neural" aria-hidden="true"></canvas>
+  <canvas id="neural" aria-hidden="true"></canvas>
 
-<div class="max-w">
+  <div class="max-w">
 
-  <!-- ══════════════════════════ EXPERIENCE ══════════════════════════ -->
-  <section class="section">
+    <!-- ══════════════════════════ EXPERIENCE ══════════════════════════ -->
+    <section class="section">
 
-    <div class="exp-grid">
-      <!-- Current Role (2-col) -->
-      <div class="exp-card exp-current fx-grid">
-        <div>
-          <span class="tag-mono">Current Role</span>
-          <h3 class="card-title">
-            AI Software Developer <span class="at">@ Hyper Digital</span>
-          </h3>
-          <p class="card-sub">
-            Trabajo en el diseño e implementación de agentes de IA, RAG pipelines, y soluciones de AI que impactan la experiencia de usuario y las métricas de ventas en productos B2B.
-          </p>
-        </div>
-        <div class="pulse-row">
-          <span class="pulse-dot"></span>
-          <span class="pulse-label">Active · Remote · ene. 2026 – Present</span>
-        </div>
-      </div>
-
-      <!-- Education -->
-      <div class="exp-card exp-edu fx-grid fx-glow fx-glow-purple">
-        <div>
-          <span class="tag-mono">Education</span>
-          <div class="edu-title">ITSON</div>
-          <div class="edu-deg">
-            B.S. Computer Software Engineering<br/>
-            Instituto Tecnológico de Sonora
+      <div class="exp-grid">
+        <!-- Current Role (2-col) -->
+        <div class="exp-card exp-current fx-grid">
+          <div>
+            <span class="tag-mono">Current Role</span>
+            <h3 class="card-title">
+              AI Software Developer <span class="at">@HyperDigital</span>
+            </h3>
+            <p class="card-sub">
+              Trabajo en el diseño e implementación de agentes de IA, RAG pipelines, y soluciones de AI que impactan la
+              experiencia de usuario y las métricas de ventas en productos B2B.
+            </p>
           </div>
-          <div class="subjects">
-            <span class="subj">Arquitectura de Software</span>
-            <span class="subj">Diseño de Software</span>
-            <span class="subj">Análisis de Algoritmos</span>
-            <span class="subj">Estructura de Datos</span>
+          <div class="pulse-row">
+            <span class="pulse-dot"></span>
+            <span class="pulse-label">Active · Remote · ene. 2026 – Present</span>
           </div>
         </div>
-        <div class="progress-wrap mt-auto">
-          <div class="progress-bar"><div class="progress-fill"></div></div>
-          <div class="progress-legend">
-            <span>Jul 2024</span>
-            <span>33% Complete</span>
-            <span>Dec 2028</span>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Achievements -->
-    <div class="ach-grid">
-      <div class="ach-card ach-nvidia fx-glow fx-glow-nvidia">
-        <div class="ach-row">
-          <div class="ach-logo">
-            <img src="https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg" alt="NVIDIA"/>
+        <!-- Education -->
+        <div class="exp-card exp-edu fx-grid fx-glow fx-glow-purple">
+          <div>
+            <span class="tag-mono">Education</span>
+            <div class="edu-title">ITSON</div>
+            <div class="edu-deg">
+              Software Engineering<br />
+              Instituto Tecnológico de Sonora
+            </div>
+            <div class="subjects">
+              <span class="subj">Arquitectura de Software</span>
+              <span class="subj">Diseño de Software</span>
+              <span class="subj">Análisis de Algoritmos</span>
+              <span class="subj">Estructura de Datos</span>
+            </div>
           </div>
-          <div class="ach-text">
-            <div class="ach-title">NVIDIA Inception Program</div>
-            <div class="ach-issuer">NVIDIA</div>
-            <div class="ach-desc">Selected for NVIDIA's program supporting AI startups with cutting‑edge technology and resources.</div>
-            <div class="ach-date">mar. 2026</div>
+          <div class="progress-wrap mt-auto">
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <div class="progress-legend">
+              <span>Jul 2024</span>
+              <span>33% Complete</span>
+              <span>Dec 2028</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="ach-card ach-intel fx-glow fx-glow-intel">
-        <div class="ach-row">
-          <div class="ach-logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg" alt="Intel" style="filter: brightness(1.5)"/>
+      <!-- Achievements -->
+      <div class="ach-grid">
+        <div class="ach-card ach-nvidia fx-glow fx-glow-nvidia">
+          <div class="ach-row">
+            <div class="ach-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg" alt="NVIDIA" />
+            </div>
+            <div class="ach-text">
+              <div class="ach-title">NVIDIA Inception Program</div>
+              <div class="ach-issuer">NVIDIA</div>
+              <div class="ach-desc">Selected for NVIDIA's program supporting AI startups with cutting‑edge technology
+                and resources.</div>
+              <div class="ach-date">mar. 2026</div>
+            </div>
           </div>
-          <div class="ach-text">
-            <div class="ach-title">Acelerando México con AI</div>
-            <div class="ach-issuer">Intel</div>
-            <div class="ach-desc">Intel certification in AI acceleration methodologies and implementation for the Mexican market.</div>
-            <div class="ach-date">ene. 2024</div>
+        </div>
+
+        <div class="ach-card ach-intel fx-glow fx-glow-intel">
+          <div class="ach-row">
+            <div class="ach-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg" alt="Intel"
+                style="filter: brightness(1.5)" />
+            </div>
+            <div class="ach-text">
+              <div class="ach-title">Acelerando México con AI</div>
+              <div class="ach-issuer">Intel</div>
+              <div class="ach-desc">Intel certification in AI acceleration methodologies and implementation for the
+                Mexican market.</div>
+              <div class="ach-date">ene. 2024</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ───── Stack chips (integrated) ───── -->
-    <div class="stack-chips">
-      <span class="stack-chip"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.24.0/files/dark/langchain-color.png"/>LangChain</span>
-      <span class="stack-chip"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.24.0/files/dark/langchain-color.png"/>LangSmith</span>
-      <span class="stack-chip"><svg width="16" height="16" viewBox="0 0 34 21" fill="none"><path fill="#22d3a5" d="M4.5 11.7a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9M10.4 0a4.5 4.5 0 0 1 4.4 5.5c-.3 1.4-.6 3 .2 4.2l1.3 1.8.3.2q.2 0 .3-.2l1.3-1.9c.8-1.1.5-2.7.2-4a4.5 4.5 0 1 1 8.8 0c-.3 1.3-.6 2.8 0 4l1.3 2a4.5 4.5 0 1 1-4.3 3.5c.3-1.3.6-2.8 0-4l-1.2-2h-.2L21.5 11c-.8 1.2-.5 2.8-.2 4.2a4.5 4.5 0 1 1-8.8.2q.5-2-.4-3.8l-.9-1.3q-.9-1.1-2.4-1.6A4.5 4.5 0 0 1 10.4 0"/></svg>Mastra</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg"/>Scikit‑Learn</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>Python</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"/>TypeScript</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/>Java</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/>React</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"/>Supabase</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"/>PostgreSQL</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg"/>SQL</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" style="filter:invert(1)"/>Vercel</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/railway/railway-original.svg"/>Railway</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>Git</span>
-      <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="filter:invert(1)"/>GitHub</span>
-    </div>
+      <!-- ───── Stack ───── -->
+      <div class="stack-section">
+        <div class="stack-chips">
+          <!-- Row 1: 8 chips -->
+          <div class="stack-chip-row">
+            <span class="chip" style="background:#0d2923;border-color:rgba(34,211,165,.25);color:#22d3a5"><img src="https://cdn.simpleicons.org/langchain/22d3a5" alt=""/>LangChain</span>
+            <span class="chip" style="background:#0d2923;border-color:rgba(34,211,165,.25);color:#22d3a5"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.24.0/files/dark/langchain-color.png" alt=""/>LangSmith</span>
+            <span class="chip" style="background:#1a1028;border-color:rgba(167,139,250,.3);color:#a78bfa"><svg width="16" height="16" viewBox="0 0 34 21" fill="none"><path fill="#a78bfa" d="M4.5 11.7a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9M10.4 0a4.5 4.5 0 0 1 4.4 5.5c-.3 1.4-.6 3 .2 4.2l1.3 1.8.3.2q.2 0 .3-.2l1.3-1.9c.8-1.1.5-2.7.2-4a4.5 4.5 0 1 1 8.8 0c-.3 1.3-.6 2.8 0 4l1.3 2a4.5 4.5 0 1 1-4.3 3.5c.3-1.3.6-2.8 0-4l-1.2-2h-.2L21.5 11c-.8 1.2-.5 2.8-.2 4.2a4.5 4.5 0 1 1-8.8.2q.5-2-.4-3.8l-.9-1.3q-.9-1.1-2.4-1.6A4.5 4.5 0 0 1 10.4 0"/></svg>Mastra</span>
+            <span class="chip" style="background:#2a1800;border-color:rgba(251,146,60,.28);color:#fb923c"><img src="https://cdn.simpleicons.org/scikitlearn/fb923c" alt=""/>Scikit-Learn</span>
+            <span class="chip" style="background:#252100;border-color:rgba(250,204,21,.28);color:#facc15"><img src="https://cdn.simpleicons.org/python/facc15" alt=""/>Python</span>
+            <span class="chip" style="background:#0a1829;border-color:rgba(96,165,250,.28);color:#60a5fa"><img src="https://cdn.simpleicons.org/typescript/60a5fa" alt=""/>TypeScript</span>
+            <span class="chip" style="background:#280800;border-color:rgba(248,113,113,.28);color:#f87171"><img src="https://cdn.simpleicons.org/openjdk/f87171" alt=""/>Java</span>
+            <span class="chip" style="background:#081e28;border-color:rgba(34,211,238,.25);color:#22d3ee"><img src="https://cdn.simpleicons.org/react/22d3ee" alt=""/>React</span>
+          </div>
+          <!-- Row 2: 7 chips -->
+          <div class="stack-chip-row">
+            <span class="chip" style="background:#082018;border-color:rgba(52,211,153,.25);color:#34d399"><img src="https://cdn.simpleicons.org/supabase/34d399" alt=""/>Supabase</span>
+            <span class="chip" style="background:#0d1430;border-color:rgba(129,140,248,.28);color:#818cf8"><img src="https://cdn.simpleicons.org/postgresql/818cf8" alt=""/>PostgreSQL</span>
+            <span class="chip" style="background:#0a1832;border-color:rgba(147,197,253,.25);color:#93c5fd"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt=""/>SQL</span>
+            <span class="chip" style="background:#181818;border-color:rgba(248,250,252,.15);color:#f1f5f9"><img src="https://cdn.simpleicons.org/vercel/f1f5f9" alt=""/>Vercel</span>
+            <span class="chip" style="background:#18182a;border-color:rgba(165,180,252,.22);color:#a5b4fc"><img src="https://cdn.simpleicons.org/railway/a5b4fc" alt=""/>Railway</span>
+            <span class="chip" style="background:#280d00;border-color:rgba(249,115,22,.28);color:#f97316"><img src="https://cdn.simpleicons.org/git/f97316" alt=""/>Git</span>
+            <span class="chip" style="background:#161b22;border-color:rgba(200,210,220,.15);color:#c9d1d9"><img src="https://cdn.simpleicons.org/github/c9d1d9" alt=""/>GitHub</span>
+          </div>
+        </div>
+      </div>
 
-  </section>
+    </section>
 
 
-</div>
+  </div>
 
-<!-- ───────── Neural background (teal particles) ───────── -->
-<script>
-  (function(){
-    const canvas = document.getElementById('neural');
-    const ctx = canvas.getContext('2d');
-    const particles = [];
-    const COLOR = [34, 211, 165];
-    const COUNT = 40;
+  <!-- ───────── Neural background (teal particles) ───────── -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('neural');
+      const ctx = canvas.getContext('2d');
+      const particles = [];
+      const COLOR = [34, 211, 165];
+      const COUNT = 40;
 
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = document.body.scrollHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = document.body.scrollHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
 
-    for (let i = 0; i < COUNT; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        size: Math.random() * 1.5 + 0.8,
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
-
-        // connections
-        for (let j = i + 1; j < particles.length; j++) {
-          const q = particles[j];
-          const dx = p.x - q.x, dy = p.y - q.y;
-          const d = Math.sqrt(dx*dx + dy*dy);
-          if (d < 180) {
-            const op = 0.15 * (1 - d / 180);
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},${op})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-
-        // particle
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},0.4)`;
-        ctx.fill();
+      for (let i = 0; i < COUNT; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          size: Math.random() * 1.5 + 0.8,
+        });
       }
 
-      requestAnimationFrame(animate);
-    }
-    animate();
-  })();
-</script>
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+          if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+
+          // connections
+          for (let j = i + 1; j < particles.length; j++) {
+            const q = particles[j];
+            const dx = p.x - q.x, dy = p.y - q.y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 180) {
+              const op = 0.15 * (1 - d / 180);
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},${op})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+
+          // particle
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},0.4)`;
+          ctx.fill();
+        }
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
 
 </body>
+
 </html>
