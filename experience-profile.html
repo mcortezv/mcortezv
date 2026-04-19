@@ -711,8 +711,21 @@
       line-height: 1.35;
     }
 
-    /* ─── Subtle card effects ─── */
+    /* ─── Card effects ─── */
     .fx-grid, .fx-glow { position: relative; }
+
+    .fx-grid::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
     .fx-grid>*, .fx-glow>* { position: relative; z-index: 1; }
 
     /* ─── Stack section ─── */
