@@ -14,9 +14,9 @@
     :root {
       --bg-base: #0d1117;
       --bg-surface: #010409;
-      --bg-card: #1e242d;
-      --bg-card-hover: #242b36;
-      --bg-card-2: #262d38;
+      --bg-card: #212830;
+      --bg-card-hover: #272f3a;
+      --bg-card-2: #2a3140;
 
       --border: #3d4550;
       --border-medium: #2d343f;
@@ -354,13 +354,13 @@
     }
 
     .ach-nvidia {
-      background: linear-gradient(135deg, rgba(118, 185, 0, 0.18), rgba(118, 185, 0, 0.06), var(--bg-card));
-      border: 1px solid rgba(118, 185, 0, 0.35);
+      background: linear-gradient(135deg, rgba(118, 185, 0, 0.16), rgba(118, 185, 0, 0.06), #1d2819);
+      border: 1px solid rgba(118, 185, 0, 0.28);
     }
 
     .ach-intel {
-      background: linear-gradient(135deg, rgba(0, 113, 197, 0.18), rgba(0, 113, 197, 0.06), var(--bg-card));
-      border: 1px solid rgba(0, 113, 197, 0.35);
+      background: linear-gradient(135deg, rgba(0, 113, 197, 0.16), rgba(0, 113, 197, 0.06), #17202c);
+      border: 1px solid rgba(0, 113, 197, 0.28);
     }
 
     .ach-row {
@@ -743,21 +743,21 @@
     }
 
     .fx-glow-purple::after {
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.35) 0%, transparent 70%);
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.22) 0%, transparent 70%);
     }
 
     .fx-glow-nvidia::after {
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle at top right, rgba(118, 185, 0, 0.40) 0%, transparent 70%);
+      width: 190px;
+      height: 190px;
+      background: radial-gradient(circle at top right, rgba(118, 185, 0, 0.26) 0%, transparent 70%);
     }
 
     .fx-glow-intel::after {
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle at top right, rgba(0, 113, 197, 0.40) 0%, transparent 70%);
+      width: 190px;
+      height: 190px;
+      background: radial-gradient(circle at top right, rgba(0, 113, 197, 0.26) 0%, transparent 70%);
     }
 
     /* Elevate direct children above pseudo effects */
@@ -769,8 +769,8 @@
 
     /* ─── Stack section ─── */
     .stack-section {
-      margin-top: 2rem;
-      padding-top: 1.75rem;
+      margin-top: calc(1rem + 6px);
+      padding-top: calc(1rem + 6px);
       border-top: 1px solid var(--border);
     }
 
@@ -783,6 +783,11 @@
     .stack-chip-row {
       display: flex;
       justify-content: space-between;
+    }
+
+    .stack-chip-row.centered {
+      justify-content: space-between;
+      padding: 0 2.5rem;
     }
 
     .chip {
@@ -914,7 +919,7 @@
             <span class="chip" style="background:#081e28;border-color:rgba(34,211,238,.25);color:#22d3ee"><img src="https://cdn.simpleicons.org/react/22d3ee" alt=""/>React</span>
           </div>
           <!-- Row 2: 7 chips -->
-          <div class="stack-chip-row">
+          <div class="stack-chip-row centered">
             <span class="chip" style="background:#082018;border-color:rgba(52,211,153,.25);color:#34d399"><img src="https://cdn.simpleicons.org/supabase/34d399" alt=""/>Supabase</span>
             <span class="chip" style="background:#0d1430;border-color:rgba(129,140,248,.28);color:#818cf8"><img src="https://cdn.simpleicons.org/postgresql/818cf8" alt=""/>PostgreSQL</span>
             <span class="chip" style="background:#0a1832;border-color:rgba(147,197,253,.25);color:#93c5fd"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt=""/>SQL</span>
