@@ -1,2 +1,2 @@
-<img src="Screenshot 2026-04-18 234437.png" width="100%"/>
+<img src="profile.png" width="100%"/>
 

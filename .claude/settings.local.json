@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(awk 'NR>=494 && NR<=684' \"C:\\\\Users\\\\mdjes\\\\Downloads\\\\mcortezv\\\\experience-profile.html\")",
-      "Bash(awk 'NR<494 || NR>684' \"C:\\\\Users\\\\mdjes\\\\Downloads\\\\mcortezv\\\\experience-profile.html\")"
-    ]
-  }
-}
