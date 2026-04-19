@@ -22,10 +22,10 @@
       --border-medium: #161b22;
       --border-strong: #30363d;
 
-      --text: #f0f6fc;
-      --text-secondary: #b8c4d0;
-      --text-muted: #8b9aaa;
-      --text-disabled: #526070;
+      --text: #ffffff;
+      --text-secondary: #d0dce8;
+      --text-muted: #adbccc;
+      --text-disabled: #6a7c8c;
 
       --accent: #22d3a5;
       --accent-dim: rgba(34, 211, 165, 0.12);
@@ -68,14 +68,6 @@
       margin: 0 auto;
       position: relative;
       z-index: 10;
-    }
-
-    /* ─── Neural bg ─── */
-    #neural {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
     }
 
     /* ─── Section label ─── */
@@ -191,6 +183,7 @@
 
     .card-sub {
       font-size: 1.0625rem;
+      font-weight: 500;
       color: var(--text-muted);
       margin-top: 0.875rem;
       line-height: 1.65;
@@ -236,6 +229,7 @@
     .pulse-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
+      font-weight: 500;
       color: var(--text-secondary);
       letter-spacing: 0.04em;
     }
@@ -249,6 +243,7 @@
 
     .edu-deg {
       font-size: 0.95rem;
+      font-weight: 500;
       color: var(--text-secondary);
       margin-top: 0.375rem;
       line-height: 1.4;
@@ -355,12 +350,12 @@
 
     .ach-nvidia {
       background: var(--bg-card);
-      border: 1px solid rgba(118, 185, 0, 0.28);
+      border: 2px solid rgba(118, 185, 0, 0.28);
     }
 
     .ach-intel {
       background: var(--bg-card);
-      border: 1px solid rgba(0, 113, 197, 0.28);
+      border: 2px solid rgba(0, 113, 197, 0.28);
     }
 
     .ach-row {
@@ -426,6 +421,7 @@
 
     .ach-desc {
       font-size: 0.95rem;
+      font-weight: 500;
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -815,8 +811,6 @@
 
 <body>
 
-  <canvas id="neural" aria-hidden="true"></canvas>
-
   <div class="max-w">
 
     <!-- ══════════════════════════ EXPERIENCE ══════════════════════════ -->
@@ -936,69 +930,6 @@
 
   </div>
 
-  <!-- ───────── Neural background (teal particles) ───────── -->
-  <script>
-    (function () {
-      const canvas = document.getElementById('neural');
-      const ctx = canvas.getContext('2d');
-      const particles = [];
-      const COLOR = [34, 211, 165];
-      const COUNT = 40;
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = document.body.scrollHeight;
-      }
-      resize();
-      window.addEventListener('resize', resize);
-
-      for (let i = 0; i < COUNT; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.25,
-          vy: (Math.random() - 0.5) * 0.25,
-          size: Math.random() * 1.5 + 0.8,
-        });
-      }
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
-          if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
-
-          // connections
-          for (let j = i + 1; j < particles.length; j++) {
-            const q = particles[j];
-            const dx = p.x - q.x, dy = p.y - q.y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-            if (d < 180) {
-              const op = 0.15 * (1 - d / 180);
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(q.x, q.y);
-              ctx.strokeStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},${op})`;
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-
-          // particle
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${COLOR[0]},${COLOR[1]},${COLOR[2]},0.4)`;
-          ctx.fill();
-        }
-
-        requestAnimationFrame(animate);
-      }
-      animate();
-    })();
-  </script>
 
 </body>
 
