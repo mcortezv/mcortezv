@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=960" />
+  <meta name="viewport" content="width=1080" />
   <title>Experience & Stack · Manuel Cortez</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,19 +12,19 @@
     rel="stylesheet" />
   <style>
     :root {
-      --bg:          #050508;
-      --surface:     #0f0f18;
+      --bg:          #05080d;
+      --surface:     #0d1219;
       --border:      rgba(255, 255, 255, 0.09);
-      --border-p:    rgba(168, 85, 247, 0.32);
-      --gap:         rgba(168, 85, 247, 0.2);
+      --border-p:    rgba(88, 166, 255, 0.3);
+      --gap:         rgba(88, 166, 255, 0.18);
 
       --text:        #ededf2;
       --text-2:      #8888a0;
       --text-3:      #404050;
 
-      --purple:      #b06ef3;
-      --purple-dim:  #7c3aed;
-      --purple-glow: rgba(176, 110, 243, 0.6);
+      --blue:        #58a6ff;
+      --blue-dim:    #1f6feb;
+      --blue-glow:   rgba(88, 166, 255, 0.6);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,7 +39,7 @@
       padding: 1.5rem 1.75rem;
     }
 
-    .page { max-width: 960px; margin: 0 auto; }
+    .page { max-width: 1080px; margin: 0 auto; }
 
     /* Outer bento wrapper */
     .page-container {
@@ -50,9 +50,9 @@
       gap: 1px;
       background: var(--gap);
       box-shadow:
-        0 0 0 1px rgba(176, 110, 243, 0.06),
-        0 0 60px rgba(176, 110, 243, 0.1),
-        0 0 120px rgba(176, 110, 243, 0.05);
+        0 0 0 1px rgba(88, 166, 255, 0.06),
+        0 0 60px rgba(88, 166, 255, 0.1),
+        0 0 120px rgba(88, 166, 255, 0.05);
     }
 
     .card { background: var(--surface); }
@@ -75,8 +75,8 @@
       content: '';
       display: block;
       width: 14px; height: 1px;
-      background: var(--purple);
-      box-shadow: 0 0 8px var(--purple-glow);
+      background: var(--blue);
+      box-shadow: 0 0 8px var(--blue-glow);
       flex-shrink: 0;
     }
 
@@ -106,7 +106,7 @@
       position: absolute;
       top: -80px; left: -50px;
       width: 380px; height: 300px;
-      background: radial-gradient(ellipse, rgba(176, 110, 243, 0.1) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(88, 166, 255, 0.1) 0%, transparent 65%);
       pointer-events: none;
     }
 
@@ -116,10 +116,10 @@
       position: absolute;
       left: 0; top: 14px; bottom: 14px;
       width: 3px;
-      background: linear-gradient(180deg, var(--purple-dim), var(--purple) 50%, var(--purple-dim));
+      background: linear-gradient(180deg, var(--blue-dim), var(--blue) 50%, var(--blue-dim));
       box-shadow:
-        0 0 20px var(--purple-glow),
-        0 0 60px rgba(176, 110, 243, 0.18);
+        0 0 20px var(--blue-glow),
+        0 0 60px rgba(88, 166, 255, 0.18);
     }
 
     .role-card > * { position: relative; }
@@ -127,18 +127,20 @@
     .role-title {
       font-size: 3.75rem;
       font-weight: 800;
-      line-height: 0.95;
+      line-height: 1.05;
       letter-spacing: -0.04em;
       margin-bottom: 1.125rem;
+      overflow: visible;
     }
 
     .role-title .at {
       display: block;
-      background: linear-gradient(135deg, var(--purple) 0%, #c084fc 60%, #e879f9 100%);
+      padding-bottom: 0.15em;
+      background: linear-gradient(135deg, #58a6ff 0%, #818cf8 28%, #a855f7 52%, #c084fc 72%, #e879f9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      filter: drop-shadow(0 0 18px rgba(176, 110, 243, 0.45));
+      filter: drop-shadow(0 0 18px rgba(88, 166, 255, 0.45));
     }
 
     .role-desc {
@@ -153,8 +155,8 @@
     .pulse-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--purple);
-      box-shadow: 0 0 14px var(--purple-glow);
+      background: var(--blue);
+      box-shadow: 0 0 14px var(--blue-glow);
       flex-shrink: 0;
       position: relative;
     }
@@ -164,7 +166,7 @@
       position: absolute;
       inset: -5px;
       border-radius: 50%;
-      background: var(--purple);
+      background: var(--blue);
       opacity: 0.15;
       animation: ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
@@ -190,8 +192,8 @@
       content: '';
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(176, 110, 243, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(176, 110, 243, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(88, 166, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88, 166, 255, 0.04) 1px, transparent 1px);
       background-size: 26px 26px;
       pointer-events: none;
     }
@@ -226,7 +228,7 @@
       color: var(--text-3);
       padding: 0.35rem 0.4rem;
       border: 1px solid var(--border);
-      background: rgba(176, 110, 243, 0.03);
+      background: rgba(88, 166, 255, 0.03);
       text-align: center;
       letter-spacing: 0.02em;
     }
@@ -240,7 +242,7 @@
 
     .progress-fill {
       height: 100%; width: 33%;
-      background: linear-gradient(90deg, var(--purple-dim), var(--purple));
+      background: linear-gradient(90deg, var(--blue-dim), var(--blue));
       position: relative;
     }
 
@@ -251,8 +253,8 @@
       transform: translateY(-50%);
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--purple);
-      box-shadow: 0 0 10px var(--purple-glow);
+      background: var(--blue);
+      box-shadow: 0 0 10px var(--blue-glow);
     }
 
     .progress-legend {
@@ -286,7 +288,7 @@
       position: absolute;
       top: 0; left: 8%; right: 8%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(176, 110, 243, 0.38) 50%, transparent);
+      background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.38) 50%, transparent);
     }
 
     .ach-inner {
@@ -349,11 +351,11 @@
       position: absolute;
       top: 0; left: 8%; right: 8%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--purple) 50%, transparent);
+      background: linear-gradient(90deg, transparent, var(--blue) 50%, transparent);
       box-shadow:
-        0 0 12px var(--purple-glow),
-        0 0 40px rgba(176, 110, 243, 0.18),
-        0 0 80px rgba(176, 110, 243, 0.07);
+        0 0 12px var(--blue-glow),
+        0 0 40px rgba(88, 166, 255, 0.18),
+        0 0 80px rgba(88, 166, 255, 0.07);
     }
 
     .stack-chips {
@@ -376,7 +378,7 @@
       align-items: center;
       gap: 0.45rem;
       padding: 0.5rem 1rem;
-      background: rgba(176, 110, 243, 0.04);
+      background: rgba(88, 166, 255, 0.04);
       border: 1px solid var(--border);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8125rem;
@@ -390,8 +392,8 @@
 
     .chip:hover {
       color: var(--text);
-      border-color: rgba(176, 110, 243, 0.42);
-      box-shadow: 0 0 18px rgba(176, 110, 243, 0.12);
+      border-color: rgba(88, 166, 255, 0.42);
+      box-shadow: 0 0 18px rgba(88, 166, 255, 0.12);
     }
 
     .chip img, .chip svg {
