@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1280" />
+  <meta name="viewport" content="width=960" />
   <title>Experience & Stack · Manuel Cortez</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,20 +12,19 @@
     rel="stylesheet" />
   <style>
     :root {
-      --bg:          #06060a;
-      --surface:     #0c0c12;
-      --surface-2:   #101018;
+      --bg:          #050508;
+      --surface:     #0f0f18;
+      --border:      rgba(255, 255, 255, 0.09);
+      --border-p:    rgba(168, 85, 247, 0.32);
+      --gap:         rgba(168, 85, 247, 0.2);
 
-      --border:      rgba(255, 255, 255, 0.07);
-      --border-p:    rgba(168, 85, 247, 0.2);
+      --text:        #ededf2;
+      --text-2:      #8888a0;
+      --text-3:      #404050;
 
-      --text:        #f0f0f4;
-      --text-2:      #8e8e9e;
-      --text-3:      #44444e;
-
-      --purple:      #a855f7;
+      --purple:      #b06ef3;
       --purple-dim:  #7c3aed;
-      --purple-glow: rgba(168, 85, 247, 0.55);
+      --purple-glow: rgba(176, 110, 243, 0.6);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,83 +32,81 @@
 
     body {
       background: var(--bg);
-      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.042) 1px, transparent 1px);
+      background-size: 26px 26px;
       color: var(--text);
       font-family: 'Inter', system-ui, sans-serif;
-      line-height: 1.6;
-      padding: 2.5rem 3rem;
+      padding: 1.5rem 1.75rem;
     }
 
-    .page {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
+    .page { max-width: 960px; margin: 0 auto; }
 
+    /* Outer bento wrapper */
     .page-container {
       border: 1px solid var(--border-p);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       gap: 1px;
-      background: rgba(168, 85, 247, 0.16);
+      background: var(--gap);
       box-shadow:
-        0 0 0 1px rgba(168, 85, 247, 0.05),
-        0 0 80px rgba(168, 85, 247, 0.06);
+        0 0 0 1px rgba(176, 110, 243, 0.06),
+        0 0 60px rgba(176, 110, 243, 0.1),
+        0 0 120px rgba(176, 110, 243, 0.05);
     }
 
     .card { background: var(--surface); }
     .page-container .card { border: none; border-radius: 0; }
 
-    /* Shared section label */
+    /* Section label */
     .tag {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.63rem;
-      letter-spacing: 0.22em;
+      font-size: 0.6rem;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--text-3);
-      margin-bottom: 2rem;
+      margin-bottom: 1.375rem;
     }
 
     .tag::before {
       content: '';
       display: block;
-      width: 18px; height: 1px;
+      width: 14px; height: 1px;
       background: var(--purple);
       box-shadow: 0 0 8px var(--purple-glow);
       flex-shrink: 0;
     }
 
-    /* ══════ ROW 1 — Role + Education ══════ */
+    /* ── ROW 1 ── */
     .exp-row {
       display: grid;
       grid-template-columns: 3fr 2fr;
       gap: 1px;
-      background: rgba(168, 85, 247, 0.16);
+      background: var(--gap);
       align-items: stretch;
     }
 
-    /* ── Role card ── */
+    /* Role card */
     .role-card {
-      padding: 3rem 3.5rem;
+      padding: 2.25rem 2.625rem;
       position: relative;
       overflow: hidden;
-      min-height: 360px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-height: 280px;
     }
 
-    /* Ambient purple glow — top-left corner */
+    /* Ambient glow top-left */
     .role-card::after {
       content: '';
       position: absolute;
-      top: -100px; left: -60px;
-      width: 480px; height: 380px;
-      background: radial-gradient(ellipse, rgba(168, 85, 247, 0.07) 0%, transparent 65%);
+      top: -80px; left: -50px;
+      width: 380px; height: 300px;
+      background: radial-gradient(ellipse, rgba(176, 110, 243, 0.1) 0%, transparent 65%);
       pointer-events: none;
     }
 
@@ -117,45 +114,41 @@
     .role-card::before {
       content: '';
       position: absolute;
-      left: 0; top: 20px; bottom: 20px;
+      left: 0; top: 14px; bottom: 14px;
       width: 3px;
       background: linear-gradient(180deg, var(--purple-dim), var(--purple) 50%, var(--purple-dim));
       box-shadow:
-        0 0 18px var(--purple-glow),
-        0 0 55px rgba(168, 85, 247, 0.18);
+        0 0 20px var(--purple-glow),
+        0 0 60px rgba(176, 110, 243, 0.18);
     }
 
     .role-card > * { position: relative; }
 
     .role-title {
-      font-size: clamp(2.75rem, 3.5vw, 4.75rem);
+      font-size: 3.75rem;
       font-weight: 800;
-      line-height: 1.0;
+      line-height: 0.95;
       letter-spacing: -0.04em;
-      margin-bottom: 1.375rem;
+      margin-bottom: 1.125rem;
     }
 
     .role-title .at {
       display: block;
-      color: var(--purple);
-      text-shadow:
-        0 0 45px var(--purple-glow),
-        0 0 120px rgba(168, 85, 247, 0.12);
+      background: linear-gradient(135deg, var(--purple) 0%, #c084fc 60%, #e879f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 18px rgba(176, 110, 243, 0.45));
     }
 
     .role-desc {
-      font-size: 1.0625rem;
-      line-height: 1.85;
+      font-size: 1rem;
+      line-height: 1.8;
       color: var(--text-2);
-      max-width: 34rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.875rem;
     }
 
-    .pulse-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+    .pulse-row { display: flex; align-items: center; gap: 0.75rem; }
 
     .pulse-dot {
       width: 8px; height: 8px;
@@ -172,7 +165,7 @@
       inset: -5px;
       border-radius: 50%;
       background: var(--purple);
-      opacity: 0.14;
+      opacity: 0.15;
       animation: ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 
@@ -184,9 +177,9 @@
       color: var(--text-2);
     }
 
-    /* ── Education card ── */
+    /* Education card */
     .edu-card {
-      padding: 3rem 2.75rem;
+      padding: 2.25rem 2.125rem;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -197,46 +190,45 @@
       content: '';
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
-      background-size: 28px 28px;
+        linear-gradient(rgba(176, 110, 243, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 110, 243, 0.04) 1px, transparent 1px);
+      background-size: 26px 26px;
       pointer-events: none;
     }
 
     .edu-card > * { position: relative; z-index: 1; }
 
     .edu-uni {
-      font-size: 4rem;
+      font-size: 5rem;
       font-weight: 800;
-      letter-spacing: -0.045em;
-      line-height: 1;
+      letter-spacing: -0.05em;
+      line-height: 0.92;
       margin-bottom: 0.5rem;
     }
 
     .edu-deg {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       color: var(--text-2);
-      line-height: 1.55;
-      margin-bottom: 2rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
     }
 
     .subjects {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.4rem;
-      margin-bottom: 2rem;
+      gap: 0.35rem;
+      margin-bottom: 1.5rem;
     }
 
     .subj {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-3);
-      padding: 0.4rem 0.5rem;
+      padding: 0.35rem 0.4rem;
       border: 1px solid var(--border);
-      background: rgba(168, 85, 247, 0.025);
+      background: rgba(176, 110, 243, 0.03);
       text-align: center;
       letter-spacing: 0.02em;
-      line-height: 1.4;
     }
 
     .mt-auto { margin-top: auto; }
@@ -266,46 +258,45 @@
     .progress-legend {
       display: flex;
       justify-content: space-between;
-      margin-top: 0.625rem;
+      margin-top: 0.5rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
+      font-size: 0.62rem;
       color: var(--text-3);
     }
 
-    /* ══════ ROW 2 — Achievements ══════ */
+    /* ── ROW 2 ── */
     .ach-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: stretch;
       gap: 1px;
-      background: rgba(168, 85, 247, 0.16);
+      background: var(--gap);
     }
 
     .ach-card {
-      padding: 2.625rem 2.75rem;
+      padding: 1.875rem 2.25rem;
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
     }
 
-    /* Subtle top border highlight on achievement cards */
+    /* Top glow line on ach cards */
     .ach-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 10%; right: 10%;
+      top: 0; left: 8%; right: 8%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.3) 50%, transparent);
+      background: linear-gradient(90deg, transparent, rgba(176, 110, 243, 0.38) 50%, transparent);
     }
 
     .ach-inner {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
       align-items: flex-start;
     }
 
     .ach-logo {
-      width: 72px; height: 72px;
+      width: 60px; height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -314,94 +305,101 @@
       border: 1px solid var(--border);
     }
 
-    .ach-logo img { width: 44px; height: 44px; object-fit: contain; }
+    .ach-logo img { width: 38px; height: 38px; object-fit: contain; }
 
     .ach-title {
-      font-size: 1.1875rem;
+      font-size: 1.125rem;
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
 
     .ach-issuer {
-      font-size: 0.8125rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      color: var(--text-2);
-      margin-bottom: 0.875rem;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
     }
 
     .ach-desc {
       font-size: 0.9375rem;
       color: var(--text-2);
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     .ach-date {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-3);
-      margin-top: 1.125rem;
+      margin-top: 0.875rem;
     }
 
-    /* ══════ ROW 3 — Stack ══════ */
+    /* ── ROW 3 Stack ── */
     .stack-section {
-      padding: 2rem 3.5rem;
+      padding: 1.875rem 2.625rem;
       background: var(--surface);
       position: relative;
     }
 
-    /* Purple glow line at top of stack */
+    /* Glowing separator line */
     .stack-section::before {
       content: '';
       position: absolute;
-      top: 0; left: 12%; right: 12%;
+      top: 0; left: 8%; right: 8%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5) 50%, transparent);
-      box-shadow: 0 0 28px rgba(168, 85, 247, 0.22), 0 0 70px rgba(168, 85, 247, 0.07);
+      background: linear-gradient(90deg, transparent, var(--purple) 50%, transparent);
+      box-shadow:
+        0 0 12px var(--purple-glow),
+        0 0 40px rgba(176, 110, 243, 0.18),
+        0 0 80px rgba(176, 110, 243, 0.07);
     }
 
     .stack-chips {
       display: flex;
       flex-direction: column;
-      gap: 0.625rem;
+      gap: 0.5rem;
     }
 
     .chip-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 0.625rem;
     }
 
-    .chip-row.inset { padding: 0 3.5rem; }
+    .chip-row.inset  { padding: 0 1.5rem; }
+    .chip-row.inset2 { padding: 0 3.5rem; }
 
     .chip {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5625rem 1.25rem;
-      background: rgba(168, 85, 247, 0.03);
+      gap: 0.45rem;
+      padding: 0.5rem 1rem;
+      background: rgba(176, 110, 243, 0.04);
       border: 1px solid var(--border);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8125rem;
       font-weight: 500;
       color: var(--text-2);
       white-space: nowrap;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.015em;
       transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
       cursor: default;
     }
 
     .chip:hover {
       color: var(--text);
-      border-color: rgba(168, 85, 247, 0.38);
-      box-shadow: 0 0 16px rgba(168, 85, 247, 0.1);
+      border-color: rgba(176, 110, 243, 0.42);
+      box-shadow: 0 0 18px rgba(176, 110, 243, 0.12);
     }
 
     .chip img, .chip svg {
-      width: 15px; height: 15px;
+      width: 14px; height: 14px;
       object-fit: contain;
       flex-shrink: 0;
-      filter: grayscale(1) brightness(1.6);
-      opacity: 0.7;
+      filter: grayscale(1) brightness(1.7);
+      opacity: 0.65;
     }
   </style>
 </head>
@@ -504,11 +502,11 @@
           <span class="chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="" />Scikit-Learn</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/python/FFD43B" alt="" />Python</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" />TypeScript</span>
-          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" />Java</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="" />React</span>
         </div>
 
-        <div class="chip-row inset">
+        <div class="chip-row">
+          <span class="chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="" />React</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" />Java</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="" />Supabase</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" />PostgreSQL</span>
           <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="" />SQL</span>
