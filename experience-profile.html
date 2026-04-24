@@ -8,300 +8,259 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" />
   <style>
     :root {
-      --bg-base: #0d1117;
-      --bg-surface: #010409;
-      --bg-card: #161b22;
-      --bg-card-hover: #1c2128;
-      --bg-card-2: #21262d;
+      --bg:          #06060a;
+      --surface:     #0c0c12;
+      --surface-2:   #101018;
 
-      --border: #30363d;
-      --border-medium: #21262d;
-      --border-strong: #484f58;
+      --border:      rgba(255, 255, 255, 0.07);
+      --border-p:    rgba(168, 85, 247, 0.2);
 
-      --text: #ffffff;
-      --text-secondary: #d0dce8;
-      --text-muted: #adbccc;
-      --text-disabled: #6a7c8c;
+      --text:        #f0f0f4;
+      --text-2:      #8e8e9e;
+      --text-3:      #44444e;
 
-      --accent: #22d3a5;
-      --accent-dim: rgba(34, 211, 165, 0.12);
-      --accent-glow: rgba(34, 211, 165, 0.28);
-
-      --accent-2: #8b5cf6;
-      --accent-2-dim: rgba(139, 92, 246, 0.20);
-      --accent-3: #f97316;
-      --accent-4: #3b82f6;
-
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
+      --purple:      #a855f7;
+      --purple-dim:  #7c3aed;
+      --purple-glow: rgba(168, 85, 247, 0.55);
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; }
 
     body {
-      background: var(--bg-base);
+      background: var(--bg);
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+      background-size: 28px 28px;
       color: var(--text);
       font-family: 'Inter', system-ui, sans-serif;
-      font-size: 18px;
       line-height: 1.6;
-      padding: 4rem 2.5rem;
+      padding: 2.5rem 3rem;
     }
 
-    .max-w {
-      max-width: 1100px;
+    .page {
+      max-width: 1440px;
       margin: 0 auto;
-      position: relative;
-      z-index: 10;
     }
 
-    /* ─── Section label ─── */
-    .section-label {
-      display: inline-flex;
+    .page-container {
+      border: 1px solid var(--border-p);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(168, 85, 247, 0.16);
+      box-shadow:
+        0 0 0 1px rgba(168, 85, 247, 0.05),
+        0 0 80px rgba(168, 85, 247, 0.06);
+    }
+
+    .card { background: var(--surface); }
+    .page-container .card { border: none; border-radius: 0; }
+
+    /* Shared section label */
+    .tag {
+      display: flex;
       align-items: center;
       gap: 0.5rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
+      font-size: 0.63rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
+      color: var(--text-3);
+      margin-bottom: 2rem;
     }
 
-    .section-label::before {
+    .tag::before {
       content: '';
       display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--accent);
+      width: 18px; height: 1px;
+      background: var(--purple);
+      box-shadow: 0 0 8px var(--purple-glow);
+      flex-shrink: 0;
     }
 
-    /* ─── Typography ─── */
-    .text-h1 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .text-gradient-accent {
-      background: linear-gradient(135deg, var(--accent), #3ecf8e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .text-body {
-      font-size: 0.9375rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-    }
-
-    .mb-10 {
-      margin-bottom: 2.5rem;
-    }
-
-    .mb-14 {
-      margin-bottom: 3.5rem;
-    }
-
-    .mt-4 {
-      margin-top: 1rem;
-    }
-
-    /* ─── EXPERIENCE ─── */
-    .section {
-      margin-bottom: 6rem;
-    }
-
-    .exp-grid {
+    /* ══════ ROW 1 — Role + Education ══════ */
+    .exp-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 3fr 2fr;
       gap: 1px;
-      background: var(--border-medium);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
+      background: rgba(168, 85, 247, 0.16);
+      align-items: stretch;
     }
 
-    .exp-card {
+    /* ── Role card ── */
+    .role-card {
+      padding: 3rem 3.5rem;
       position: relative;
-      background: var(--bg-card);
-      padding: 1.625rem;
       overflow: hidden;
-    }
-
-    .exp-current {
-      grid-column: span 2;
-      min-height: 280px;
+      min-height: 360px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .exp-edu {
-      display: flex;
-      flex-direction: column;
+    /* Ambient purple glow — top-left corner */
+    .role-card::after {
+      content: '';
+      position: absolute;
+      top: -100px; left: -60px;
+      width: 480px; height: 380px;
+      background: radial-gradient(ellipse, rgba(168, 85, 247, 0.07) 0%, transparent 65%);
+      pointer-events: none;
     }
 
-    .tag-mono {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
+    /* Left accent bar */
+    .role-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 20px; bottom: 20px;
+      width: 3px;
+      background: linear-gradient(180deg, var(--purple-dim), var(--purple) 50%, var(--purple-dim));
+      box-shadow:
+        0 0 18px var(--purple-glow),
+        0 0 55px rgba(168, 85, 247, 0.18);
+    }
+
+    .role-card > * { position: relative; }
+
+    .role-title {
+      font-size: clamp(2.75rem, 3.5vw, 4.75rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.375rem;
+    }
+
+    .role-title .at {
       display: block;
+      color: var(--purple);
+      text-shadow:
+        0 0 45px var(--purple-glow),
+        0 0 120px rgba(168, 85, 247, 0.12);
     }
 
-    .card-title {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.2;
-    }
-
-    .card-title .at {
-      color: var(--accent);
-    }
-
-    .card-sub {
+    .role-desc {
       font-size: 1.0625rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-top: 0.875rem;
-      line-height: 1.65;
-      max-width: 38rem;
+      line-height: 1.85;
+      color: var(--text-2);
+      max-width: 34rem;
+      margin-bottom: 2.5rem;
     }
 
     .pulse-row {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 0.625rem;
-      margin-top: 1.5rem;
+      gap: 0.75rem;
     }
 
     .pulse-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--accent);
-      position: relative;
+      background: var(--purple);
+      box-shadow: 0 0 14px var(--purple-glow);
       flex-shrink: 0;
+      position: relative;
     }
 
     .pulse-dot::after {
       content: '';
       position: absolute;
-      inset: -3px;
+      inset: -5px;
       border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.4;
-      animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      background: var(--purple);
+      opacity: 0.14;
+      animation: ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 
-    @keyframes ping {
-
-      75%,
-      100% {
-        transform: scale(2);
-        opacity: 0;
-      }
-    }
+    @keyframes ping { 75%, 100% { transform: scale(2.8); opacity: 0; } }
 
     .pulse-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      letter-spacing: 0.04em;
+      font-size: 0.8125rem;
+      color: var(--text-2);
     }
 
-    /* ─── Education card ─── */
-    .edu-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text);
+    /* ── Education card ── */
+    .edu-card {
+      padding: 3rem 2.75rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .edu-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .edu-card > * { position: relative; z-index: 1; }
+
+    .edu-uni {
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
     }
 
     .edu-deg {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      margin-top: 0.375rem;
-      line-height: 1.4;
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      line-height: 1.55;
+      margin-bottom: 2rem;
     }
 
     .subjects {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.4rem;
-      margin-top: 1.125rem;
-      margin-bottom: 1.75rem;
+      margin-bottom: 2rem;
     }
 
     .subj {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.58rem;
-      color: var(--text-secondary);
-      padding: 0.22rem 0.4rem;
-      border-radius: 4px;
+      font-size: 0.7rem;
+      color: var(--text-3);
+      padding: 0.4rem 0.5rem;
       border: 1px solid var(--border);
-      background: var(--accent-2-dim);
+      background: rgba(168, 85, 247, 0.025);
       text-align: center;
-      white-space: nowrap;
-      letter-spacing: 0.01em;
-      line-height: 1.3;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
     }
 
-    .progress-wrap {
-      margin-top: 2rem;
-    }
+    .mt-auto { margin-top: auto; }
 
     .progress-bar {
-      width: 100%;
-      height: 4px;
-      background: var(--border);
-      border-radius: 999px;
-      overflow: hidden;
+      width: 100%; height: 2px;
+      background: rgba(255, 255, 255, 0.06);
     }
 
     .progress-fill {
-      height: 100%;
-      border-radius: 999px;
+      height: 100%; width: 33%;
+      background: linear-gradient(90deg, var(--purple-dim), var(--purple));
       position: relative;
-      background: linear-gradient(90deg, var(--accent-2), rgba(139, 92, 246, 0.4));
-      width: 33%;
     }
 
     .progress-fill::after {
       content: '';
       position: absolute;
-      right: 0;
-      top: 50%;
+      right: -1px; top: 50%;
       transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
+      width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--accent-2);
-      box-shadow: 0 0 12px var(--accent-2);
+      background: var(--purple);
+      box-shadow: 0 0 10px var(--purple-glow);
     }
 
     .progress-legend {
@@ -309,594 +268,261 @@
       justify-content: space-between;
       margin-top: 0.625rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
+      font-size: 0.68rem;
+      color: var(--text-3);
     }
 
-    .edu-status {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--text-secondary);
-      letter-spacing: 0.06em;
-    }
-
-    .edu-status .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent-2);
-      box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-    }
-
-    /* ─── Achievement cards (NVIDIA, Intel) ─── */
-    .ach-grid {
+    /* ══════ ROW 2 — Achievements ══════ */
+    .ach-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
+      align-items: stretch;
+      gap: 1px;
+      background: rgba(168, 85, 247, 0.16);
     }
 
     .ach-card {
+      padding: 2.625rem 2.75rem;
+      display: flex;
+      flex-direction: column;
       position: relative;
-      border-radius: var(--radius-xl);
-      padding: 1.25rem;
       overflow: hidden;
     }
 
-    .ach-nvidia {
-      background: var(--bg-card);
-      border: 2px solid rgba(118, 185, 0, 0.20);
+    /* Subtle top border highlight on achievement cards */
+    .ach-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.3) 50%, transparent);
     }
 
-    .ach-intel {
-      background: var(--bg-card);
-      border: 2px solid rgba(0, 113, 197, 0.20);
-    }
-
-    .ach-row {
+    .ach-inner {
       display: flex;
-      gap: 1rem;
-      position: relative;
-      z-index: 10;
+      gap: 1.5rem;
       align-items: flex-start;
     }
 
     .ach-logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 12px;
-      flex-shrink: 0;
+      width: 72px; height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
     }
 
-    .ach-logo img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
-
-    .ach-nvidia .ach-logo {
-      background: linear-gradient(135deg, rgba(118, 185, 0, 0.18), rgba(118, 185, 0, 0.06));
-      border: 1px solid rgba(118, 185, 0, 0.3);
-    }
-
-    .ach-intel .ach-logo {
-      background: linear-gradient(135deg, rgba(0, 113, 197, 0.18), rgba(0, 113, 197, 0.06));
-      border: 1px solid rgba(0, 113, 197, 0.3);
-    }
-
-    .ach-text {
-      flex: 1;
-      min-width: 0;
-    }
+    .ach-logo img { width: 44px; height: 44px; object-fit: contain; }
 
     .ach-title {
-      font-size: 1.25rem;
+      font-size: 1.1875rem;
       font-weight: 700;
-      color: var(--text);
       line-height: 1.25;
-      margin-bottom: 0.375rem;
+      margin-bottom: 0.3rem;
     }
 
     .ach-issuer {
-      font-size: 0.9rem;
+      font-size: 0.8125rem;
       font-weight: 600;
-      margin-bottom: 0.625rem;
-    }
-
-    .ach-nvidia .ach-issuer {
-      color: #90d400;
-    }
-
-    .ach-intel .ach-issuer {
-      color: #2196f3;
+      color: var(--text-2);
+      margin-bottom: 0.875rem;
     }
 
     .ach-desc {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      line-height: 1.6;
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      line-height: 1.75;
     }
 
     .ach-date {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--text-disabled);
-      margin-top: 0.875rem;
+      font-size: 0.7rem;
+      color: var(--text-3);
+      margin-top: 1.125rem;
     }
 
-    /* ─── STACK bento ─── */
-    .stack-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+    /* ══════ ROW 3 — Stack ══════ */
+    .stack-section {
+      padding: 2rem 3.5rem;
+      background: var(--surface);
+      position: relative;
     }
 
-    .stack-header .text-h1 {
-      max-width: 28rem;
-    }
-
-    .stack-header .text-body {
-      max-width: 24rem;
-      text-align: right;
-      color: var(--text-muted);
-    }
-
-    .stack-bento {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border-medium);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-    }
-
-    .stack-cell {
-      background: var(--bg-card);
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cell-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    /* AI/ML cell */
-    .cell-aiml {
-      grid-column: span 2;
-      min-height: 220px;
-    }
-
-    .ai-pipeline {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.375rem;
-      margin: 0.25rem 0 1.25rem;
-    }
-
-    .ai-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 600;
-      padding: 0.125rem 0.5rem;
-      border-radius: 4px;
-      background: rgba(34, 211, 165, 0.12);
-      color: #22d3a5;
-      border: 1px solid rgba(34, 211, 165, 0.2);
-    }
-
-    .ai-chip img {
-      width: 14px;
-      height: 14px;
-      object-fit: contain;
-    }
-
-    .ai-arrow {
-      color: var(--text-disabled);
-      font-size: 0.6rem;
-    }
-
-    .tech-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.35rem 0;
-    }
-
-    .tech-info {
-      display: flex;
-      align-items: center;
-      gap: 0.625rem;
-      min-width: 0;
-    }
-
-    .tech-info img {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .tech-name {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .tech-sep {
-      color: var(--text-disabled);
-      margin: 0 0.375rem;
-      font-size: 0.75rem;
-    }
-
-    .tech-desc {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-    }
-
-    .level-bar {
-      width: 32px;
-      height: 4px;
-      border-radius: 999px;
-      overflow: hidden;
-      flex-shrink: 0;
-      background: var(--border-medium);
-    }
-
-    .level-fill {
-      height: 100%;
-      border-radius: 999px;
-      opacity: 0.7;
-    }
-
-    .space-y-2>*+* {
-      margin-top: 0.625rem;
-    }
-
-    .space-y-3>*+* {
-      margin-top: 0.75rem;
-    }
-
-    .space-y-4>*+* {
-      margin-top: 1rem;
-    }
-
-    .mt-auto {
-      margin-top: auto;
-    }
-
-    /* Languages cell */
-    .lang-item {}
-
-    .lang-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.25rem;
-    }
-
-    .lang-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .lang-left img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .lang-name {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .lang-desc {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      padding-left: 1.75rem;
-      line-height: 1.4;
-    }
-
-    /* Framework cell */
-    .fw-name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent-2);
-    }
-
-    .fw-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-    }
-
-    .fw-left {
-      display: flex;
-      align-items: center;
-      gap: 0.625rem;
-    }
-
-    .fw-left img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .fw-desc {
-      font-size: 0.68rem;
-      color: var(--text-muted);
-    }
-
-    .fw-progress {
-      margin-top: 1rem;
-      height: 4px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: rgba(139, 92, 246, 0.12);
-    }
-
-    .fw-progress-fill {
-      height: 100%;
-      width: 95%;
-      border-radius: 999px;
-      background: rgba(139, 92, 246, 0.6);
-    }
-
-    /* Database cell */
-    .cell-db {
-      grid-column: span 2;
-      min-height: 180px;
-    }
-
-    .db-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-      margin-top: auto;
-    }
-
-    .db-tile {
-      padding: 0.75rem;
-      border-radius: 8px;
-      background: rgba(59, 130, 246, 0.06);
-      border: 1px solid rgba(59, 130, 246, 0.14);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .db-tile-top {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .db-tile-top img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .db-tile-name {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.1;
-    }
-
-    .db-tile-desc {
-      font-size: 0.63rem;
-      color: var(--text-muted);
-      line-height: 1.35;
-    }
-
-    /* ─── Card effects ─── */
-    .fx-grid, .fx-glow { position: relative; }
-
-    .fx-grid::before {
+    /* Purple glow line at top of stack */
+    .stack-section::before {
       content: '';
       position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-      background-size: 20px 20px;
-    }
-
-    .fx-grid>*, .fx-glow>* { position: relative; z-index: 1; }
-
-    /* ─── Stack section ─── */
-    .stack-section {
-      margin-top: calc(1rem + 6px);
-      padding-top: calc(1rem + 6px);
-      border-top: 1px solid var(--border);
+      top: 0; left: 12%; right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.5) 50%, transparent);
+      box-shadow: 0 0 28px rgba(168, 85, 247, 0.22), 0 0 70px rgba(168, 85, 247, 0.07);
     }
 
     .stack-chips {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.625rem;
     }
 
-    .stack-chip-row {
+    .chip-row {
       display: flex;
       justify-content: space-between;
     }
 
-    .stack-chip-row.centered {
-      justify-content: space-between;
-      padding: 0 2.5rem;
-    }
+    .chip-row.inset { padding: 0 3.5rem; }
 
     .chip {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.4rem 0.85rem;
-      border-radius: 6px;
-      background: #111820;
-      border: 1px solid rgba(255,255,255,0.07);
+      gap: 0.5rem;
+      padding: 0.5625rem 1.25rem;
+      background: rgba(168, 85, 247, 0.03);
+      border: 1px solid var(--border);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.8125rem;
       font-weight: 500;
-      color: #c8d4df;
+      color: var(--text-2);
       white-space: nowrap;
       letter-spacing: 0.02em;
+      transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+
+    .chip:hover {
+      color: var(--text);
+      border-color: rgba(168, 85, 247, 0.38);
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.1);
     }
 
     .chip img, .chip svg {
-      width: 16px;
-      height: 16px;
+      width: 15px; height: 15px;
       object-fit: contain;
       flex-shrink: 0;
+      filter: grayscale(1) brightness(1.6);
+      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="max-w">
+  <div class="page">
+  <div class="page-container">
 
-    <!-- ══════════════════════════ EXPERIENCE ══════════════════════════ -->
-    <section class="section">
+    <!-- ══════ ROW 1: Role + Education ══════ -->
+    <div class="exp-row">
 
-      <div class="exp-grid">
-        <!-- Current Role (2-col) -->
-        <div class="exp-card exp-current fx-grid">
+      <div class="card role-card">
+        <div>
+          <span class="tag">Current Role</span>
+          <h3 class="role-title">
+            AI Software Developer
+            <span class="at">@HyperDigital</span>
+          </h3>
+          <p class="role-desc">
+            Designing and implementing AI agents, RAG pipelines, and AI-powered solutions
+            that impact user experience and sales metrics in B2B products.
+          </p>
+        </div>
+        <div class="pulse-row">
+          <span class="pulse-dot"></span>
+          <span class="pulse-label">Active · Remote · Jan 2026 – Present</span>
+        </div>
+      </div>
+
+      <div class="card edu-card">
+        <span class="tag">Education</span>
+        <div class="edu-uni">ITSON</div>
+        <div class="edu-deg">
+          Software Engineering<br />
+          Instituto Tecnológico de Sonora
+        </div>
+        <div class="subjects">
+          <span class="subj">Software Architecture</span>
+          <span class="subj">Software Design</span>
+          <span class="subj">Algorithm Analysis</span>
+          <span class="subj">Data Structures</span>
+        </div>
+        <div class="mt-auto">
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="progress-legend">
+            <span>Jul 2024</span>
+            <span>33% Complete</span>
+            <span>Dec 2028</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════ ROW 2: Achievements ══════ -->
+    <div class="ach-row">
+
+      <div class="card ach-card ach-nvidia">
+        <div class="ach-inner">
+          <div class="ach-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg" alt="NVIDIA" />
+          </div>
           <div>
-            <span class="tag-mono">Current Role</span>
-            <h3 class="card-title">
-              AI Software Developer <span class="at">@HyperDigital</span>
-            </h3>
-            <p class="card-sub">
-              Trabajo en el diseño e implementación de agentes de IA, RAG pipelines, y soluciones de AI que impactan la
-              experiencia de usuario y las métricas de ventas en productos B2B.
-            </p>
-          </div>
-          <div class="pulse-row">
-            <span class="pulse-dot"></span>
-            <span class="pulse-label">Active · Remote · ene. 2026 – Present</span>
+            <div class="ach-title">NVIDIA Inception Program</div>
+            <div class="ach-issuer">NVIDIA</div>
+            <div class="ach-desc">Selected for NVIDIA's program supporting AI startups with cutting-edge technology and resources.</div>
+            <div class="ach-date">Mar 2026</div>
           </div>
         </div>
+      </div>
 
-        <!-- Education -->
-        <div class="exp-card exp-edu fx-grid fx-glow fx-glow-purple">
+      <div class="card ach-card ach-intel">
+        <div class="ach-inner">
+          <div class="ach-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg" alt="Intel"
+              style="filter: brightness(1.5)" />
+          </div>
           <div>
-            <span class="tag-mono">Education</span>
-            <div class="edu-title">ITSON</div>
-            <div class="edu-deg">
-              Software Engineering<br />
-              Instituto Tecnológico de Sonora
-            </div>
-            <div class="subjects">
-              <span class="subj">Arquitectura de Software</span>
-              <span class="subj">Diseño de Software</span>
-              <span class="subj">Análisis de Algoritmos</span>
-              <span class="subj">Estructura de Datos</span>
-            </div>
-          </div>
-          <div class="progress-wrap mt-auto">
-            <div class="progress-bar">
-              <div class="progress-fill"></div>
-            </div>
-            <div class="progress-legend">
-              <span>Jul 2024</span>
-              <span>33% Complete</span>
-              <span>Dec 2028</span>
-            </div>
+            <div class="ach-title">Acelerando México con AI</div>
+            <div class="ach-issuer">Intel</div>
+            <div class="ach-desc">Intel certification in AI acceleration methodologies and implementation for the Mexican market.</div>
+            <div class="ach-date">Jan 2024</div>
           </div>
         </div>
       </div>
 
-      <!-- Achievements -->
-      <div class="ach-grid">
-        <div class="ach-card ach-nvidia fx-glow fx-glow-nvidia">
-          <div class="ach-row">
-            <div class="ach-logo">
-              <img src="https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg" alt="NVIDIA" />
-            </div>
-            <div class="ach-text">
-              <div class="ach-title">NVIDIA Inception Program</div>
-              <div class="ach-issuer">NVIDIA</div>
-              <div class="ach-desc">Selected for NVIDIA's program supporting AI startups with cutting‑edge technology
-                and resources.</div>
-              <div class="ach-date">mar. 2026</div>
-            </div>
-          </div>
+    </div>
+
+    <!-- ══════ ROW 3: Stack ══════ -->
+    <div class="stack-section">
+      <div class="stack-chips">
+
+        <div class="chip-row">
+          <span class="chip"><img src="https://cdn.simpleicons.org/langchain/22d3a5" alt="" />LangChain</span>
+          <span class="chip"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.24.0/files/dark/langchain-color.png" alt="" />LangSmith</span>
+          <span class="chip"><svg width="15" height="15" viewBox="0 0 34 21" fill="none"><path fill="#a1a1aa" d="M4.5 11.7a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9M10.4 0a4.5 4.5 0 0 1 4.4 5.5c-.3 1.4-.6 3 .2 4.2l1.3 1.8.3.2q.2 0 .3-.2l1.3-1.9c.8-1.1.5-2.7.2-4a4.5 4.5 0 1 1 8.8 0c-.3 1.3-.6 2.8 0 4l1.3 2a4.5 4.5 0 1 1-4.3 3.5c.3-1.3.6-2.8 0-4l-1.2-2h-.2L21.5 11c-.8 1.2-.5 2.8-.2 4.2a4.5 4.5 0 1 1-8.8.2q.5-2-.4-3.8l-.9-1.3q-.9-1.1-2.4-1.6A4.5 4.5 0 0 1 10.4 0"/></svg>Mastra</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="" />Scikit-Learn</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/python/FFD43B" alt="" />Python</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" />TypeScript</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" />Java</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="" />React</span>
         </div>
 
-        <div class="ach-card ach-intel fx-glow fx-glow-intel">
-          <div class="ach-row">
-            <div class="ach-logo">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg" alt="Intel"
-                style="filter: brightness(1.5)" />
-            </div>
-            <div class="ach-text">
-              <div class="ach-title">Acelerando México con AI</div>
-              <div class="ach-issuer">Intel</div>
-              <div class="ach-desc">Intel certification in AI acceleration methodologies and implementation for the
-                Mexican market.</div>
-              <div class="ach-date">ene. 2024</div>
-            </div>
-          </div>
+        <div class="chip-row inset">
+          <span class="chip"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="" />Supabase</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" />PostgreSQL</span>
+          <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="" />SQL</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt="" />Vercel</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/railway/ffffff" alt="" />Railway</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/git/F05032" alt="" />Git</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" />GitHub</span>
         </div>
+
       </div>
-
-      <!-- ───── Stack ───── -->
-      <div class="stack-section">
-        <div class="stack-chips">
-          <!-- Row 1: 8 chips -->
-          <div class="stack-chip-row">
-            <span class="chip"><img src="https://cdn.simpleicons.org/langchain/22d3a5" alt=""/>LangChain</span>
-            <span class="chip"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.24.0/files/dark/langchain-color.png" alt=""/>LangSmith</span>
-            <span class="chip"><svg width="16" height="16" viewBox="0 0 34 21" fill="none"><path fill="#c8d4df" d="M4.5 11.7a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9M10.4 0a4.5 4.5 0 0 1 4.4 5.5c-.3 1.4-.6 3 .2 4.2l1.3 1.8.3.2q.2 0 .3-.2l1.3-1.9c.8-1.1.5-2.7.2-4a4.5 4.5 0 1 1 8.8 0c-.3 1.3-.6 2.8 0 4l1.3 2a4.5 4.5 0 1 1-4.3 3.5c.3-1.3.6-2.8 0-4l-1.2-2h-.2L21.5 11c-.8 1.2-.5 2.8-.2 4.2a4.5 4.5 0 1 1-8.8.2q.5-2-.4-3.8l-.9-1.3q-.9-1.1-2.4-1.6A4.5 4.5 0 0 1 10.4 0"/></svg>Mastra</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt=""/>Scikit-Learn</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/python/FFD43B" alt=""/>Python</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt=""/>TypeScript</span>
-            <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt=""/>Java</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/react/61DAFB" alt=""/>React</span>
-          </div>
-          <!-- Row 2: 7 chips -->
-          <div class="stack-chip-row centered">
-            <span class="chip"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt=""/>Supabase</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt=""/>PostgreSQL</span>
-            <span class="chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg" alt=""/>SQL</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt=""/>Vercel</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/railway/ffffff" alt=""/>Railway</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/git/F05032" alt=""/>Git</span>
-            <span class="chip"><img src="https://cdn.simpleicons.org/github/ffffff" alt=""/>GitHub</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
+    </div>
 
   </div>
-
+  </div>
 
 </body>
 
