@@ -12,19 +12,18 @@
     rel="stylesheet" />
   <style>
     :root {
-      --bg:          #05080d;
-      --surface:     #0d1219;
-      --border:      rgba(255, 255, 255, 0.09);
-      --border-p:    rgba(88, 166, 255, 0.3);
-      --gap:         rgba(88, 166, 255, 0.18);
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #1c2128;
+      --border:   #30363d;
+      --gap:      #21262d;
 
-      --text:        #ffffff;
-      --text-2:      #b0b8cc;
-      --text-3:      #606878;
+      --text:     #f0f6fc;
+      --text-2:   #adbac7;
+      --text-3:   #636e7b;
 
-      --blue:        #58a6ff;
-      --blue-dim:    #1f6feb;
-      --blue-glow:   rgba(88, 166, 255, 0.6);
+      --accent:   #58a6ff;
+      --accent-2: #1f6feb;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,8 +31,6 @@
 
     body {
       background: var(--bg);
-      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.042) 1px, transparent 1px);
-      background-size: 26px 26px;
       color: var(--text);
       font-family: 'Inter', system-ui, sans-serif;
       padding: 1.5rem 1.75rem;
@@ -42,18 +39,13 @@
 
     .page { width: 1080px; margin: 0 auto; }
 
-    /* Outer bento wrapper */
     .page-container {
-      border: 1px solid var(--border-p);
+      border: 1px solid var(--border);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       gap: 1px;
       background: var(--gap);
-      box-shadow:
-        0 0 0 1px rgba(88, 166, 255, 0.06),
-        0 0 60px rgba(88, 166, 255, 0.1),
-        0 0 120px rgba(88, 166, 255, 0.05);
     }
 
     .card { background: var(--surface); }
@@ -65,10 +57,11 @@
       align-items: center;
       gap: 0.5rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.24em;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-3);
+      color: var(--text-2);
       margin-bottom: 1.375rem;
     }
 
@@ -76,8 +69,7 @@
       content: '';
       display: block;
       width: 14px; height: 1px;
-      background: var(--blue);
-      box-shadow: 0 0 8px var(--blue-glow);
+      background: var(--accent);
       flex-shrink: 0;
     }
 
@@ -101,32 +93,19 @@
       min-height: 280px;
     }
 
-    /* Ambient glow top-left */
-    .role-card::after {
-      content: '';
-      position: absolute;
-      top: -80px; left: -50px;
-      width: 380px; height: 300px;
-      background: radial-gradient(ellipse, rgba(88, 166, 255, 0.1) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
     /* Left accent bar */
     .role-card::before {
       content: '';
       position: absolute;
       left: 0; top: 14px; bottom: 14px;
-      width: 3px;
-      background: linear-gradient(180deg, var(--blue-dim), var(--blue) 50%, var(--blue-dim));
-      box-shadow:
-        0 0 20px var(--blue-glow),
-        0 0 60px rgba(88, 166, 255, 0.18);
+      width: 2px;
+      background: var(--accent);
     }
 
     .role-card > * { position: relative; }
 
     .role-title {
-      font-size: 3.75rem;
+      font-size: 3.25rem;
       font-weight: 800;
       line-height: 1.05;
       letter-spacing: -0.04em;
@@ -137,15 +116,12 @@
     .role-title .at {
       display: block;
       padding-bottom: 0.15em;
-      background: linear-gradient(135deg, #58a6ff 0%, #818cf8 28%, #a855f7 52%, #c084fc 72%, #e879f9 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--accent);
     }
 
     .role-desc {
       font-size: 1.0625rem;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 1.8;
       color: var(--text-2);
       margin-bottom: 1.875rem;
@@ -156,8 +132,7 @@
     .pulse-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 14px var(--blue-glow);
+      background: #3fb950;
       flex-shrink: 0;
       position: relative;
     }
@@ -165,18 +140,19 @@
     .pulse-dot::after {
       content: '';
       position: absolute;
-      inset: -5px;
+      inset: -4px;
       border-radius: 50%;
-      background: var(--blue);
-      opacity: 0.15;
+      background: #3fb950;
+      opacity: 0.2;
       animation: ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 
-    @keyframes ping { 75%, 100% { transform: scale(2.8); opacity: 0; } }
+    @keyframes ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }
 
     .pulse-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.875rem;
+      font-weight: 500;
       color: var(--text-2);
     }
 
@@ -187,14 +163,15 @@
       flex-direction: column;
       position: relative;
       overflow: hidden;
+      background: var(--surface2);
     }
 
     .edu-card::before {
       content: '';
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(88, 166, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(88, 166, 255, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
       background-size: 26px 26px;
       pointer-events: none;
     }
@@ -207,10 +184,12 @@
       letter-spacing: -0.05em;
       line-height: 0.92;
       margin-bottom: 0.5rem;
+      color: var(--text);
     }
 
     .edu-deg {
       font-size: 0.9375rem;
+      font-weight: 500;
       color: var(--text-2);
       line-height: 1.5;
       margin-bottom: 1.5rem;
@@ -226,10 +205,11 @@
     .subj {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
+      font-weight: 600;
       color: var(--text-2);
       padding: 0.35rem 0.4rem;
       border: 1px solid var(--border);
-      background: rgba(88, 166, 255, 0.03);
+      background: rgba(255, 255, 255, 0.02);
       text-align: center;
       letter-spacing: 0.02em;
     }
@@ -238,24 +218,23 @@
 
     .progress-bar {
       width: 100%; height: 2px;
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--gap);
     }
 
     .progress-fill {
       height: 100%; width: 33%;
-      background: linear-gradient(90deg, var(--blue-dim), var(--blue));
+      background: var(--accent);
       position: relative;
     }
 
     .progress-fill::after {
       content: '';
       position: absolute;
-      right: -1px; top: 50%;
+      right: -3px; top: 50%;
       transform: translateY(-50%);
-      width: 7px; height: 7px;
+      width: 6px; height: 6px;
       border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 10px var(--blue-glow);
+      background: var(--accent);
     }
 
     .progress-legend {
@@ -271,8 +250,6 @@
     .ach-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--gap);
     }
 
     .ach-card {
@@ -283,13 +260,8 @@
       overflow: hidden;
     }
 
-    /* Top glow line on ach cards */
-    .ach-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 8%; right: 8%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.38) 50%, transparent);
+    .ach-card:first-child {
+      border-right: 1px solid var(--border);
     }
 
     .ach-inner {
@@ -328,6 +300,7 @@
 
     .ach-desc {
       font-size: 0.9375rem;
+      font-weight: 500;
       color: var(--text-2);
       line-height: 1.7;
     }
@@ -346,17 +319,12 @@
       position: relative;
     }
 
-    /* Glowing separator line */
     .stack-section::before {
       content: '';
       position: absolute;
-      top: 0; left: 8%; right: 8%;
+      top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--blue) 50%, transparent);
-      box-shadow:
-        0 0 12px var(--blue-glow),
-        0 0 40px rgba(88, 166, 255, 0.18),
-        0 0 80px rgba(88, 166, 255, 0.07);
+      background: var(--border);
     }
 
     .stack-chips {
@@ -368,7 +336,7 @@
     .chip-row {
       display: flex;
       justify-content: center;
-      gap: 0.625rem;
+      gap: 0.5rem;
     }
 
     .chip-row.inset  { padding: 0 1.5rem; }
@@ -378,31 +346,24 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      padding: 0.5rem 1rem;
-      background: rgba(88, 166, 255, 0.04);
+      padding: 0.45rem 0.875rem;
+      background: var(--surface2);
       border: 1px solid var(--border);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.875rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-2);
       white-space: nowrap;
       letter-spacing: 0.015em;
-      transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
       cursor: default;
-    }
-
-    .chip:hover {
-      color: var(--text);
-      border-color: rgba(88, 166, 255, 0.42);
-      box-shadow: 0 0 18px rgba(88, 166, 255, 0.12);
     }
 
     .chip img, .chip svg {
       width: 14px; height: 14px;
       object-fit: contain;
       flex-shrink: 0;
-      filter: grayscale(1) brightness(1.7);
-      opacity: 0.65;
+      filter: grayscale(1) brightness(1.6);
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -469,10 +430,9 @@
             <img src="https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg" alt="NVIDIA" />
           </div>
           <div>
-            <div class="ach-title">NVIDIA Inception Program</div>
+            <div class="ach-title">Inception Program</div>
             <div class="ach-issuer">NVIDIA</div>
             <div class="ach-desc">Selected for NVIDIA's program supporting AI startups with cutting-edge technology and resources.</div>
-            <div class="ach-date">Mar 2026</div>
           </div>
         </div>
       </div>
@@ -487,7 +447,6 @@
             <div class="ach-title">Acelerando México con AI</div>
             <div class="ach-issuer">Intel</div>
             <div class="ach-desc">Intel certification in AI acceleration methodologies and implementation for the Mexican market.</div>
-            <div class="ach-date">Jan 2024</div>
           </div>
         </div>
       </div>
